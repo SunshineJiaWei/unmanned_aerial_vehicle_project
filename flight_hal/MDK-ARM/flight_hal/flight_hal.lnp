@@ -19,6 +19,16 @@
 "flight_hal\stm32f1xx_hal_exti.o"
 "flight_hal\system_stm32f1xx.o"
 "flight_hal\com_debug.o"
+"flight_hal\croutine.o"
+"flight_hal\event_groups.o"
+"flight_hal\list.o"
+"flight_hal\queue.o"
+"flight_hal\stream_buffer.o"
+"flight_hal\tasks.o"
+"flight_hal\timers.o"
+"flight_hal\heap_4.o"
+"flight_hal\port.o"
+"flight_hal\app_task.o"
 --library_type=microlib --strict --scatter "flight_hal\flight_hal.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
