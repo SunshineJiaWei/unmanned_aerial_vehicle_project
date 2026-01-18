@@ -1,0 +1,14 @@
+.\remote_hal\heap_4.o: freeRTOS\portable\heap_4.c
+.\remote_hal\heap_4.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\remote_hal\heap_4.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\string.h
+.\remote_hal\heap_4.o: ./freeRTOS/include/FreeRTOS.h
+.\remote_hal\heap_4.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\remote_hal\heap_4.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\remote_hal\heap_4.o: ./freeRTOS/FreeRTOSConfig.h
+.\remote_hal\heap_4.o: ./freeRTOS/include/projdefs.h
+.\remote_hal\heap_4.o: ./freeRTOS/include/portable.h
+.\remote_hal\heap_4.o: ./freeRTOS/include/deprecated_definitions.h
+.\remote_hal\heap_4.o: ./freeRTOS/portable/portmacro.h
+.\remote_hal\heap_4.o: ./freeRTOS/include/mpu_wrappers.h
+.\remote_hal\heap_4.o: ./freeRTOS/include/task.h
+.\remote_hal\heap_4.o: ./freeRTOS/include/list.h

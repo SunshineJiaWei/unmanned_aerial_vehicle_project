@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>flight_hal</TargetName>
+      <TargetName>remote_hal</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
@@ -48,8 +48,8 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>flight_hal\</OutputDirectory>
-          <OutputName>flight_hal</OutputName>
+          <OutputDirectory>.\remote_hal\</OutputDirectory>
+          <OutputName>remote_hal</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;./common;./freeRTOS;./freeRTOS/include;./freeRTOS/portable;.\app</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;./common;./freeRTOS;./freeRTOS/include;./freeRTOS/portable;./app</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -800,7 +800,7 @@
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
         <targetInfos>
-          <targetInfo name="flight_hal"/>
+          <targetInfo name="remote_hal"/>
         </targetInfos>
       </component>
     </components>

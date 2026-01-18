@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'remote_hal' 
- * Target:  'flight_hal' 
+ * Target:  'remote_hal' 
  */
 
 #ifndef RTE_COMPONENTS_H

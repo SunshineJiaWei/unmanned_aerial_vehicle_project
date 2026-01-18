@@ -1,0 +1,13 @@
+.\remote_hal\croutine.o: freeRTOS\croutine.c
+.\remote_hal\croutine.o: ./freeRTOS/include/FreeRTOS.h
+.\remote_hal\croutine.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\remote_hal\croutine.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\remote_hal\croutine.o: ./freeRTOS/FreeRTOSConfig.h
+.\remote_hal\croutine.o: ./freeRTOS/include/projdefs.h
+.\remote_hal\croutine.o: ./freeRTOS/include/portable.h
+.\remote_hal\croutine.o: ./freeRTOS/include/deprecated_definitions.h
+.\remote_hal\croutine.o: ./freeRTOS/portable/portmacro.h
+.\remote_hal\croutine.o: ./freeRTOS/include/mpu_wrappers.h
+.\remote_hal\croutine.o: ./freeRTOS/include/task.h
+.\remote_hal\croutine.o: ./freeRTOS/include/list.h
+.\remote_hal\croutine.o: ./freeRTOS/include/croutine.h

@@ -22,7 +22,7 @@
   </DaveTm>
 
   <Target>
-    <TargetName>flight_hal</TargetName>
+    <TargetName>remote_hal</TargetName>
     <ToolsetNumber>0x4</ToolsetNumber>
     <ToolsetName>ARM-ADS</ToolsetName>
     <TargetOption>
