@@ -41,3 +41,4 @@
 .\remote_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 .\remote_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 .\remote_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+.\remote_hal\app_task.o: .\interface\int_ip5305t.h
