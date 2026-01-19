@@ -25,7 +25,10 @@ flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+flight_hal\main.o: ../Core/Inc/tim.h
 flight_hal\main.o: ../Core/Inc/usart.h
 flight_hal\main.o: ../Core/Inc/gpio.h
 flight_hal\main.o: ./common/com_debug.h
@@ -42,4 +45,5 @@ flight_hal\main.o: ./freeRTOS/portable/portmacro.h
 flight_hal\main.o: ./freeRTOS/include/mpu_wrappers.h
 flight_hal\main.o: ./freeRTOS/include/task.h
 flight_hal\main.o: ./freeRTOS/include/list.h
-flight_hal\main.o: .\interface\int_ip5305t.h
+flight_hal\main.o: ./interface/int_ip5305t.h
+flight_hal\main.o: ./interface/int_motor.h
