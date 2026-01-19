@@ -5,7 +5,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "com_debug.h"
-
+#include "int_ip5305t.h"
 
 void task_entry(void);
 

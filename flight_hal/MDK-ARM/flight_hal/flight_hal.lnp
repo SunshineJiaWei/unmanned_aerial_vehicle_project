@@ -29,6 +29,7 @@
 "flight_hal\heap_4.o"
 "flight_hal\port.o"
 "flight_hal\app_task.o"
+"flight_hal\int_ip5305t.o"
 --library_type=microlib --strict --scatter "flight_hal\flight_hal.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
