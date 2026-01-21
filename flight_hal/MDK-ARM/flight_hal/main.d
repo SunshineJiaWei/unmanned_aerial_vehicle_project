@@ -45,5 +45,7 @@ flight_hal\main.o: ./freeRTOS/portable/portmacro.h
 flight_hal\main.o: ./freeRTOS/include/mpu_wrappers.h
 flight_hal\main.o: ./freeRTOS/include/task.h
 flight_hal\main.o: ./freeRTOS/include/list.h
+flight_hal\main.o: ./common/com_config.h
 flight_hal\main.o: ./interface/int_ip5305t.h
 flight_hal\main.o: ./interface/int_motor.h
+flight_hal\main.o: ./interface/int_led.h

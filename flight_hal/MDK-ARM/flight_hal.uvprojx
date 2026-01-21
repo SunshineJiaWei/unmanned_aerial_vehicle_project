@@ -778,6 +778,11 @@
               <FileType>5</FileType>
               <FilePath>.\common\com_debug.h</FilePath>
             </File>
+            <File>
+              <FileName>com_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\common\com_config.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -977,6 +982,16 @@
               <FileName>int_motor.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\interface\int_motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>int_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interface\int_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>int_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\interface\int_led.h</FilePath>
             </File>
           </Files>
         </Group>
