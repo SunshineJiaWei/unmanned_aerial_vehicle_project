@@ -2,10 +2,18 @@
 #define __APP_TASK_H__
 
 
+#include <string.h>
+
+// 中间件层
 #include "FreeRTOS.h"
 #include "task.h"
+
+// 公共层
 #include "com_debug.h"
+
+// 硬件接口层
 #include "int_ip5305t.h"
+#include "int_si24r1.h"
 
 void task_entry(void);
 

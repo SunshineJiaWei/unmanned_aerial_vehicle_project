@@ -1,5 +1,6 @@
 .\remote_hal\app_task.o: app\app_task.c
 .\remote_hal\app_task.o: app\app_task.h
+.\remote_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\remote_hal\app_task.o: ./freeRTOS/include/FreeRTOS.h
 .\remote_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
 .\remote_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -14,7 +15,6 @@
 .\remote_hal\app_task.o: ./common/com_debug.h
 .\remote_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\remote_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
-.\remote_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\remote_hal\app_task.o: ../Core/Inc/usart.h
 .\remote_hal\app_task.o: ../Core/Inc/main.h
 .\remote_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
@@ -43,3 +43,5 @@
 .\remote_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 .\remote_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 .\remote_hal\app_task.o: ./interface/int_ip5305t.h
+.\remote_hal\app_task.o: ./interface/int_si24r1.h
+.\remote_hal\app_task.o: ../Core/Inc/spi.h
