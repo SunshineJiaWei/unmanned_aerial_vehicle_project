@@ -25,7 +25,9 @@
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+.\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+.\remote_hal\main.o: ../Core/Inc/spi.h
 .\remote_hal\main.o: ../Core/Inc/usart.h
 .\remote_hal\main.o: ../Core/Inc/gpio.h
 .\remote_hal\main.o: ./common/com_debug.h
@@ -42,4 +44,5 @@
 .\remote_hal\main.o: ./freeRTOS/include/mpu_wrappers.h
 .\remote_hal\main.o: ./freeRTOS/include/task.h
 .\remote_hal\main.o: ./freeRTOS/include/list.h
-.\remote_hal\main.o: .\interface\int_ip5305t.h
+.\remote_hal\main.o: ./interface/int_ip5305t.h
+.\remote_hal\main.o: ./interface/int_si24r1.h

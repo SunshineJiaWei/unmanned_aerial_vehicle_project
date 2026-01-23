@@ -26,6 +26,7 @@
 .\remote_hal\int_ip5305t.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 .\remote_hal\int_ip5305t.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 .\remote_hal\int_ip5305t.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+.\remote_hal\int_ip5305t.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 .\remote_hal\int_ip5305t.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 .\remote_hal\int_ip5305t.o: ./freeRTOS/include/FreeRTOS.h
 .\remote_hal\int_ip5305t.o: ./freeRTOS/FreeRTOSConfig.h

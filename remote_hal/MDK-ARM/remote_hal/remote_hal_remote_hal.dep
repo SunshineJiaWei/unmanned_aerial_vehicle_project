@@ -1,10 +1,10 @@
 Dependencies for Project 'remote_hal', Target 'remote_hal': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (startup_stm32f103xb.s)(0x696D9D56)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o .\remote_hal\startup_stm32f103xb.o --depend .\remote_hal\startup_stm32f103xb.d)
-F (../Core/Src/main.c)(0x696D144A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\main.o --omf_browse .\remote_hal\main.crf --depend .\remote_hal\main.d)
-I (../Core/Inc/main.h)(0x696DA2F1)
+F (startup_stm32f103xb.s)(0x6973150E)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o .\remote_hal\startup_stm32f103xb.o --depend .\remote_hal\startup_stm32f103xb.d)
+F (../Core/Src/main.c)(0x697315C7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\main.o --omf_browse .\remote_hal\main.crf --depend .\remote_hal\main.d)
+I (../Core/Inc/main.h)(0x6973150C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -27,7 +27,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
+I (../Core/Inc/spi.h)(0x697313A0)
 I (../Core/Inc/usart.h)(0x696D1448)
 I (../Core/Inc/gpio.h)(0x6969A2E3)
 I (./common/com_debug.h)(0x696DA5CB)
@@ -44,12 +46,13 @@ I (./freeRTOS/portable/portmacro.h)(0x696C9AA3)
 I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
-I (.\interface\int_ip5305t.h)(0x696DA5B1)
-F (../Core/Src/gpio.c)(0x696D9D4F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\gpio.o --omf_browse .\remote_hal\gpio.crf --depend .\remote_hal\gpio.d)
+I (./interface/int_ip5305t.h)(0x696DA5B1)
+I (./interface/int_si24r1.h)(0x697315A6)
+F (../Core/Src/gpio.c)(0x6973150A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\gpio.o --omf_browse .\remote_hal\gpio.crf --depend .\remote_hal\gpio.d)
 I (../Core/Inc/gpio.h)(0x6969A2E3)
-I (../Core/Inc/main.h)(0x696DA2F1)
+I (../Core/Inc/main.h)(0x6973150C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -72,12 +75,42 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Core/Src/usart.c)(0x696D1447)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\usart.o --omf_browse .\remote_hal\usart.crf --depend .\remote_hal\usart.d)
+F (../Core/Src/spi.c)(0x6973150A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\spi.o --omf_browse .\remote_hal\spi.crf --depend .\remote_hal\spi.d)
+I (../Core/Inc/spi.h)(0x697313A0)
+I (../Core/Inc/main.h)(0x6973150C)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x6968A4A5)
+I (D:\Software\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6968A4B7)
+I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
+F (../Core/Src/usart.c)(0x696D1447)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\usart.o --omf_browse .\remote_hal\usart.crf --depend .\remote_hal\usart.d)
 I (../Core/Inc/usart.h)(0x696D1448)
-I (../Core/Inc/main.h)(0x696DA2F1)
+I (../Core/Inc/main.h)(0x6973150C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -100,11 +133,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Core/Src/stm32f1xx_it.c)(0x696D04F9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_it.o --omf_browse .\remote_hal\stm32f1xx_it.crf --depend .\remote_hal\stm32f1xx_it.d)
-I (../Core/Inc/main.h)(0x696DA2F1)
+F (../Core/Src/stm32f1xx_it.c)(0x696D04F9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_it.o --omf_browse .\remote_hal\stm32f1xx_it.crf --depend .\remote_hal\stm32f1xx_it.d)
+I (../Core/Inc/main.h)(0x6973150C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -127,6 +161,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
 I (../Core/Inc/stm32f1xx_it.h)(0x696CA06D)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
@@ -138,10 +173,10 @@ I (./freeRTOS/portable/portmacro.h)(0x696C9AA3)
 I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
-F (../Core/Src/stm32f1xx_hal_msp.c)(0x6969A2E4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_msp.o --omf_browse .\remote_hal\stm32f1xx_hal_msp.crf --depend .\remote_hal\stm32f1xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x696DA2F1)
+F (../Core/Src/stm32f1xx_hal_msp.c)(0x6969A2E4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_msp.o --omf_browse .\remote_hal\stm32f1xx_hal_msp.crf --depend .\remote_hal\stm32f1xx_hal_msp.d)
+I (../Core/Inc/main.h)(0x6973150C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -164,10 +199,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_gpio_ex.o --omf_browse .\remote_hal\stm32f1xx_hal_gpio_ex.crf --depend .\remote_hal\stm32f1xx_hal_gpio_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_gpio_ex.o --omf_browse .\remote_hal\stm32f1xx_hal_gpio_ex.crf --depend .\remote_hal\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -190,10 +226,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_uart.o --omf_browse .\remote_hal\stm32f1xx_hal_uart.crf --depend .\remote_hal\stm32f1xx_hal_uart.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_spi.o --omf_browse .\remote_hal\stm32f1xx_hal_spi.crf --depend .\remote_hal\stm32f1xx_hal_spi.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -216,10 +253,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal.o --omf_browse .\remote_hal\stm32f1xx_hal.crf --depend .\remote_hal\stm32f1xx_hal.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal.o --omf_browse .\remote_hal\stm32f1xx_hal.crf --depend .\remote_hal\stm32f1xx_hal.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -242,10 +280,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_rcc.o --omf_browse .\remote_hal\stm32f1xx_hal_rcc.crf --depend .\remote_hal\stm32f1xx_hal_rcc.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_rcc.o --omf_browse .\remote_hal\stm32f1xx_hal_rcc.crf --depend .\remote_hal\stm32f1xx_hal_rcc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -268,10 +307,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_rcc_ex.o --omf_browse .\remote_hal\stm32f1xx_hal_rcc_ex.crf --depend .\remote_hal\stm32f1xx_hal_rcc_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_rcc_ex.o --omf_browse .\remote_hal\stm32f1xx_hal_rcc_ex.crf --depend .\remote_hal\stm32f1xx_hal_rcc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -294,10 +334,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_gpio.o --omf_browse .\remote_hal\stm32f1xx_hal_gpio.crf --depend .\remote_hal\stm32f1xx_hal_gpio.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_gpio.o --omf_browse .\remote_hal\stm32f1xx_hal_gpio.crf --depend .\remote_hal\stm32f1xx_hal_gpio.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -320,10 +361,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_dma.o --omf_browse .\remote_hal\stm32f1xx_hal_dma.crf --depend .\remote_hal\stm32f1xx_hal_dma.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_dma.o --omf_browse .\remote_hal\stm32f1xx_hal_dma.crf --depend .\remote_hal\stm32f1xx_hal_dma.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -346,10 +388,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_cortex.o --omf_browse .\remote_hal\stm32f1xx_hal_cortex.crf --depend .\remote_hal\stm32f1xx_hal_cortex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_cortex.o --omf_browse .\remote_hal\stm32f1xx_hal_cortex.crf --depend .\remote_hal\stm32f1xx_hal_cortex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -372,10 +415,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_pwr.o --omf_browse .\remote_hal\stm32f1xx_hal_pwr.crf --depend .\remote_hal\stm32f1xx_hal_pwr.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_pwr.o --omf_browse .\remote_hal\stm32f1xx_hal_pwr.crf --depend .\remote_hal\stm32f1xx_hal_pwr.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -398,10 +442,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_flash.o --omf_browse .\remote_hal\stm32f1xx_hal_flash.crf --depend .\remote_hal\stm32f1xx_hal_flash.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_flash.o --omf_browse .\remote_hal\stm32f1xx_hal_flash.crf --depend .\remote_hal\stm32f1xx_hal_flash.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -424,10 +469,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_flash_ex.o --omf_browse .\remote_hal\stm32f1xx_hal_flash_ex.crf --depend .\remote_hal\stm32f1xx_hal_flash_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_flash_ex.o --omf_browse .\remote_hal\stm32f1xx_hal_flash_ex.crf --depend .\remote_hal\stm32f1xx_hal_flash_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -450,10 +496,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_exti.o --omf_browse .\remote_hal\stm32f1xx_hal_exti.crf --depend .\remote_hal\stm32f1xx_hal_exti.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_exti.o --omf_browse .\remote_hal\stm32f1xx_hal_exti.crf --depend .\remote_hal\stm32f1xx_hal_exti.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -476,8 +523,36 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (../Core/Src/system_stm32f1xx.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\system_stm32f1xx.o --omf_browse .\remote_hal\system_stm32f1xx.crf --depend .\remote_hal\system_stm32f1xx.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stm32f1xx_hal_uart.o --omf_browse .\remote_hal\stm32f1xx_hal_uart.crf --depend .\remote_hal\stm32f1xx_hal_uart.d)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x6968A4A5)
+I (D:\Software\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6968A4B7)
+I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
+F (../Core/Src/system_stm32f1xx.c)(0x6968A4B7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\system_stm32f1xx.o --omf_browse .\remote_hal\system_stm32f1xx.crf --depend .\remote_hal\system_stm32f1xx.d)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x6968A4A5)
@@ -487,7 +562,7 @@ I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6968A4A5)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6968A4A5)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6968A4B7)
@@ -502,17 +577,18 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-F (.\common\com_debug.c)(0x696D146B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\com_debug.o --omf_browse .\remote_hal\com_debug.crf --depend .\remote_hal\com_debug.d)
+F (.\common\com_debug.c)(0x696D146B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\com_debug.o --omf_browse .\remote_hal\com_debug.crf --depend .\remote_hal\com_debug.d)
 I (common\com_debug.h)(0x696DA5CB)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (../Core/Inc/usart.h)(0x696D1448)
-I (../Core/Inc/main.h)(0x696DA2F1)
+I (../Core/Inc/main.h)(0x6973150C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -534,9 +610,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
 F (.\common\com_debug.h)(0x696DA5CB)()
-F (.\freeRTOS\croutine.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\croutine.o --omf_browse .\remote_hal\croutine.crf --depend .\remote_hal\croutine.d)
+F (.\freeRTOS\croutine.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\croutine.o --omf_browse .\remote_hal\croutine.crf --depend .\remote_hal\croutine.d)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -549,7 +626,7 @@ I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
 I (./freeRTOS/include/croutine.h)(0x696C9A9A)
-F (.\freeRTOS\event_groups.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\event_groups.o --omf_browse .\remote_hal\event_groups.crf --depend .\remote_hal\event_groups.d)
+F (.\freeRTOS\event_groups.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\event_groups.o --omf_browse .\remote_hal\event_groups.crf --depend .\remote_hal\event_groups.d)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -565,7 +642,7 @@ I (./freeRTOS/include/list.h)(0x696C9A9A)
 I (./freeRTOS/include/timers.h)(0x696C9A9A)
 I (./freeRTOS/include/event_groups.h)(0x696C9A9A)
 F (.\freeRTOS\FreeRTOSConfig.h)(0x696D046E)()
-F (.\freeRTOS\list.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\list.o --omf_browse .\remote_hal\list.crf --depend .\remote_hal\list.d)
+F (.\freeRTOS\list.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\list.o --omf_browse .\remote_hal\list.crf --depend .\remote_hal\list.d)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -577,7 +654,7 @@ I (./freeRTOS/include/deprecated_definitions.h)(0x696C9A9A)
 I (./freeRTOS/portable/portmacro.h)(0x696C9AA3)
 I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
-F (.\freeRTOS\queue.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\queue.o --omf_browse .\remote_hal\queue.crf --depend .\remote_hal\queue.d)
+F (.\freeRTOS\queue.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\queue.o --omf_browse .\remote_hal\queue.crf --depend .\remote_hal\queue.d)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
@@ -592,7 +669,7 @@ I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
 I (./freeRTOS/include/queue.h)(0x696C9A9A)
-F (.\freeRTOS\stream_buffer.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stream_buffer.o --omf_browse .\remote_hal\stream_buffer.crf --depend .\remote_hal\stream_buffer.d)
+F (.\freeRTOS\stream_buffer.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\stream_buffer.o --omf_browse .\remote_hal\stream_buffer.crf --depend .\remote_hal\stream_buffer.d)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
@@ -606,7 +683,7 @@ I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
 I (./freeRTOS/include/stream_buffer.h)(0x696C9A9A)
-F (.\freeRTOS\tasks.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\tasks.o --omf_browse .\remote_hal\tasks.crf --depend .\remote_hal\tasks.d)
+F (.\freeRTOS\tasks.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\tasks.o --omf_browse .\remote_hal\tasks.crf --depend .\remote_hal\tasks.d)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
@@ -622,7 +699,7 @@ I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
 I (./freeRTOS/include/timers.h)(0x696C9A9A)
 I (./freeRTOS/include/stack_macros.h)(0x696C9A9A)
-F (.\freeRTOS\timers.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\timers.o --omf_browse .\remote_hal\timers.crf --depend .\remote_hal\timers.d)
+F (.\freeRTOS\timers.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\timers.o --omf_browse .\remote_hal\timers.crf --depend .\remote_hal\timers.d)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -655,7 +732,7 @@ F (.\freeRTOS\include\StackMacros.h)(0x696C9A9A)()
 F (.\freeRTOS\include\stream_buffer.h)(0x696C9A9A)()
 F (.\freeRTOS\include\task.h)(0x696C9A9A)()
 F (.\freeRTOS\include\timers.h)(0x696C9A9A)()
-F (.\freeRTOS\portable\heap_4.c)(0x696C9A9D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\heap_4.o --omf_browse .\remote_hal\heap_4.crf --depend .\remote_hal\heap_4.d)
+F (.\freeRTOS\portable\heap_4.c)(0x696C9A9D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\heap_4.o --omf_browse .\remote_hal\heap_4.crf --depend .\remote_hal\heap_4.d)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
@@ -669,7 +746,7 @@ I (./freeRTOS/portable/portmacro.h)(0x696C9AA3)
 I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
-F (.\freeRTOS\portable\port.c)(0x696C9AA3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\port.o --omf_browse .\remote_hal\port.crf --depend .\remote_hal\port.d)
+F (.\freeRTOS\portable\port.c)(0x696C9AA3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\port.o --omf_browse .\remote_hal\port.crf --depend .\remote_hal\port.d)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -682,7 +759,7 @@ I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
 F (.\freeRTOS\portable\portmacro.h)(0x696C9AA3)()
-F (.\app\app_task.c)(0x696DA8B1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\app_task.o --omf_browse .\remote_hal\app_task.crf --depend .\remote_hal\app_task.d)
+F (.\app\app_task.c)(0x69731606)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\app_task.o --omf_browse .\remote_hal\app_task.crf --depend .\remote_hal\app_task.d)
 I (app\app_task.h)(0x696DA5D9)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -700,9 +777,9 @@ I (D:\Software\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (../Core/Inc/usart.h)(0x696D1448)
-I (../Core/Inc/main.h)(0x696DA2F1)
+I (../Core/Inc/main.h)(0x6973150C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -723,14 +800,15 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
-I (.\interface\int_ip5305t.h)(0x696DA5B1)
+I (./interface/int_ip5305t.h)(0x696DA5B1)
 F (.\app\app_task.h)(0x696DA5D9)()
-F (.\interface\int_ip5305t.c)(0x696DA8CD)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I .\interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\int_ip5305t.o --omf_browse .\remote_hal\int_ip5305t.crf --depend .\remote_hal\int_ip5305t.d)
+F (.\interface\int_ip5305t.c)(0x696DA8CD)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\int_ip5305t.o --omf_browse .\remote_hal\int_ip5305t.crf --depend .\remote_hal\int_ip5305t.d)
 I (interface\int_ip5305t.h)(0x696DA5B1)
-I (../Core/Inc/main.h)(0x696DA2F1)
+I (../Core/Inc/main.h)(0x6973150C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6969F41B)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
@@ -753,6 +831,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (./freeRTOS/FreeRTOSConfig.h)(0x696D046E)
@@ -764,3 +843,39 @@ I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
 F (.\interface\int_ip5305t.h)(0x696DA5B1)()
+F (.\interface\int_si24r1.c)(0x6972F60C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface-I.\RTE\_remote_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o .\remote_hal\int_si24r1.o --omf_browse .\remote_hal\int_si24r1.crf --depend .\remote_hal\int_si24r1.d)
+I (interface\int_si24r1.h)(0x697315A6)
+I (../Core/Inc/spi.h)(0x697313A0)
+I (../Core/Inc/main.h)(0x6973150C)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x697313A1)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x6968A4B7)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x6968A4A5)
+I (D:\Software\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6968A4A5)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6968A4B7)
+I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
+I (./common/com_debug.h)(0x696DA5CB)
+I (D:\Software\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (D:\Software\Keil5\ARM\ARMCC\include\stdarg.h)(0x60252376)
+I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (../Core/Inc/usart.h)(0x696D1448)
+F (.\interface\int_si24r1.h)(0x697315A6)()

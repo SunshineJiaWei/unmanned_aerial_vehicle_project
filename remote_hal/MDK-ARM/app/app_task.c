@@ -19,7 +19,6 @@ void task_entry(void)
 }
 
 void app_task(void *pvParameters)
-
 {
 
     while (1)
