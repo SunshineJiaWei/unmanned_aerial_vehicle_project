@@ -16,6 +16,7 @@
 #include "int_ip5305t.h"
 #include "int_motor.h"
 #include "int_led.h"
+#include "int_si24r1.h"
 
 void task_entry(void);
 

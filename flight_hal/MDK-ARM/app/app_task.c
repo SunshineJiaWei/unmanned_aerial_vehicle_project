@@ -38,6 +38,13 @@ void flight_task(void *pvParameters);
 #define FLIGHT_TASK_PERIOD 6
 TaskHandle_t flight_task_handle;
 
+// 无线通讯任务
+void communicate_task(void *pvParameters);
+#define COMMUNICATE_TASK_STACK_SIZE 128
+#define COMMUNICATE_TASK_PRIORITY 2
+#define COMMUNICATE_TASK_PERIOD 6
+TaskHandle_t communicate_task_handle;
+
 // LED任务
 void led_task(void *pvParameters);
 #define LED_TASK_STACK_SIZE 128
@@ -47,9 +54,10 @@ TaskHandle_t led_task_handle;
 
 void task_entry(void)
 {
-    xTaskCreate(app_task, "app_task", APP_TASK_STACK_SIZE, NULL, APP_TaSK_PRIORITY, &app_task_handle);
+    // xTaskCreate(app_task, "app_task", APP_TASK_STACK_SIZE, NULL, APP_TaSK_PRIORITY, &app_task_handle);
     xTaskCreate(power_task, "power_task", POWER_TASK_STACK_SIZE, NULL, POWER_TASK_PRIORITY, &power_task_handle);
     xTaskCreate(flight_task, "flight_task", FLIGHT_TASK_STACK_SIZE, NULL, FLIGHT_TASK_PRIORITY, &flight_task_handle);
+    xTaskCreate(communicate_task, "communicate_task", POWER_TASK_STACK_SIZE, NULL, COMMUNICATE_TASK_PRIORITY, &communicate_task_handle);
     xTaskCreate(led_task, "led_task", LED_TASK_STACK_SIZE, NULL, LED_TASK_PRIORITY, &led_task_handle);
 
     vTaskStartScheduler();
@@ -101,6 +109,25 @@ void flight_task(void *pvParameters)
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(FLIGHT_TASK_PERIOD));
         
+    }
+}
+
+static uint8_t si24r1_rx_buf[TX_PLOAD_WIDTH];
+void communicate_task(void *pvParameters)
+{
+    DEBUG_PRINTF("communicate_task");
+
+    TickType_t start_time = xTaskGetTickCount();
+
+    while (1)
+    {
+        uint8_t res = int_si24r1_rx_packet(si24r1_rx_buf);
+        if (!res)
+        {
+            DEBUG_PRINTF("rx: %s\n", si24r1_rx_buf);
+        }
+
+        vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
     }
 }
 

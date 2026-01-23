@@ -49,3 +49,5 @@ flight_hal\app_task.o: ./interface/int_ip5305t.h
 flight_hal\app_task.o: ./interface/int_motor.h
 flight_hal\app_task.o: ../Core/Inc/tim.h
 flight_hal\app_task.o: ./interface/int_led.h
+flight_hal\app_task.o: ./interface/int_si24r1.h
+flight_hal\app_task.o: ../Core/Inc/spi.h
