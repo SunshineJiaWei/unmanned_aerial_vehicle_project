@@ -1,6 +1,9 @@
 #ifndef __nRF24L01P__
 #define __nRF24L01P__
 
+#include "FreeRTOS.h"
+#include "task.h"
+
 #include "spi.h"
 #include "com_debug.h"
 

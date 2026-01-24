@@ -173,6 +173,7 @@ uint8_t int_si24r1_tx_packet(uint8_t *txbuf)
 	while ((!(state & TX_DS)) && (!(state & MAX_RT)))
 	{
 		state = int_si24r1_read_reg(STATUS);
+		vTaskDelay(1); // 短暂让出CPU，防止通讯失败时，导致程序一直卡在这
 	}
 
 	int_si24r1_write_reg(WRITE_REG + STATUS, state); // 清除TX_DS或MAX_RT中断标志

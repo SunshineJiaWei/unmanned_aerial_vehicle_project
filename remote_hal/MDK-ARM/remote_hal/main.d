@@ -46,3 +46,4 @@
 .\remote_hal\main.o: ./freeRTOS/include/list.h
 .\remote_hal\main.o: ./interface/int_ip5305t.h
 .\remote_hal\main.o: ./interface/int_si24r1.h
+.\remote_hal\main.o: ./interface/int_key.h

@@ -33,6 +33,7 @@
 ".\remote_hal\app_task.o"
 ".\remote_hal\int_ip5305t.o"
 ".\remote_hal\int_si24r1.o"
+".\remote_hal\int_key.o"
 --library_type=microlib --strict --scatter ".\remote_hal\remote_hal.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

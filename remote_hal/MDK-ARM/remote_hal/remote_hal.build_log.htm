@@ -22,21 +22,37 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 c:\Users\25150\Desktop\Unmanned_Aerial_Vehicle_Project\remote_hal\MDK-ARM\remote_hal.uvprojx
-Project File Date:  01/23/2026
+Project File Date:  01/24/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Software\Keil5\ARM\ARMCC\Bin'
 Build target 'remote_hal'
+compiling int_key.c...
+interface\int_key.h(27): warning:  #14-D: extra text after expected end of preprocessing directive
+  #endif /* __INT_KEY_H *//
+interface\int_key.c(76): warning:  #1-D: last line of file ends without a newline
+  }
+interface\int_key.c: 2 warnings, 0 errors
 compiling app_task.c...
-./interface/int_si24r1.h(21): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
+./interface/int_si24r1.h(24): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define READ_REG 0x00    // Define read command to register
-./interface/int_si24r1.h(22): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
+./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define WRITE_REG 0x20   // Define write command to register
-app\app_task.c: 2 warnings, 0 errors
+./interface/int_key.h(27): warning:  #14-D: extra text after expected end of preprocessing directive
+  #endif /* __INT_KEY_H *//
+app\app_task.c: 3 warnings, 0 errors
+compiling main.c...
+./interface/int_si24r1.h(24): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
+  #define READ_REG 0x00    // Define read command to register
+./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
+  #define WRITE_REG 0x20   // Define write command to register
+./interface/int_key.h(27): warning:  #14-D: extra text after expected end of preprocessing directive
+  #endif /* __INT_KEY_H *//
+../Core/Src/main.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=11136 RO-data=312 RW-data=140 ZI-data=18828  
+Program Size: Code=11812 RO-data=312 RW-data=144 ZI-data=18824  
 FromELF: creating hex file...
-".\remote_hal\remote_hal.axf" - 0 Error(s), 2 Warning(s).
+".\remote_hal\remote_hal.axf" - 0 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -60,7 +76,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
