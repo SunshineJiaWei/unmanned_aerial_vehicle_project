@@ -15,6 +15,7 @@
 #include "int_ip5305t.h"
 #include "int_si24r1.h"
 #include "int_key.h"
+#include "int_joystick.h"
 
 void task_entry(void);
 

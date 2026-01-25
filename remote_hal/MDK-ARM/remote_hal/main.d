@@ -22,11 +22,15 @@
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+.\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+.\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 .\remote_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+.\remote_hal\main.o: ../Core/Inc/adc.h
+.\remote_hal\main.o: ../Core/Inc/dma.h
 .\remote_hal\main.o: ../Core/Inc/spi.h
 .\remote_hal\main.o: ../Core/Inc/usart.h
 .\remote_hal\main.o: ../Core/Inc/gpio.h
@@ -47,3 +51,4 @@
 .\remote_hal\main.o: ./interface/int_ip5305t.h
 .\remote_hal\main.o: ./interface/int_si24r1.h
 .\remote_hal\main.o: ./interface/int_key.h
+.\remote_hal\main.o: ./interface/int_joystick.h
