@@ -2,6 +2,13 @@
 
 extern remote_data_t remote_data;
 extern remote_state_t remote_state;
+extern flight_state_t flight_state;
+
+static thr_state_t thr_state;
+static uint32_t enter_max_time;
+static uint32_t enter_min_time;
+
+
 
 static uint8_t recv_buf[TX_PLOAD_WIDTH];
 static uint8_t retry_count = 0;
@@ -79,6 +86,126 @@ void app_process_connect_state(uint8_t res)
         {
             remote_state = REMOTE_STATE_DISCONNECT;
         }
+    }   
+}
+
+/**
+ * @brief 油门解锁
+ * 
+ * @return uint8_t 解锁成果：0表示成功，非0表示失败
+ */
+static uint8_t app_throttle_unlock(void)
+{
+    switch (thr_state)
+    {
+        case THR_STATE_FREE:
+        {
+            if (remote_data.throttle >= 900)
+            {
+                thr_state = THE_STATE_MAX;
+                enter_max_time = xTaskGetTickCount();
+            }
+            break;
+        }
+        case THE_STATE_MAX:
+        {
+            if (remote_data.throttle < 900)
+            {
+                if (xTaskGetTickCount() - enter_max_time >= 1000)
+                {
+                    thr_state = THR_STATE_LEAVE_MAX;
+                }
+                else
+                {
+                    thr_state = THR_STATE_FREE;
+                }
+            }
+            break;
+        }
+        case THR_STATE_LEAVE_MAX:
+        {
+            if (remote_data.throttle <= 100)
+            {
+                thr_state = THR_STATE_MIN;
+                enter_min_time = xTaskGetTickCount();
+            }
+            break;
+        }
+        case THR_STATE_MIN:
+        {
+            if (remote_data.throttle > 100 && xTaskGetTickCount() - enter_min_time < 1000)
+            {
+                thr_state = THR_STATE_FREE;
+            }
+            else if(remote_data.throttle <= 100 && xTaskGetTickCount() - enter_min_time >= 1000)
+            {
+                thr_state = THR_STATE_UNLOCK;
+            }
+            break;
+        }
+        case THR_STATE_UNLOCK:
+        {
+            thr_state = THR_STATE_FREE;
+            return 0;
+            break;
+        }
+        default:
+        {
+            flight_state = FLIGHT_STATE_IDLE;
+            break;
+        }
     }
-    
+
+    return 1;
+}
+
+
+void app_process_flight_state(void)
+{
+    switch (flight_state)
+    {
+        case FLIGHT_STATE_IDLE:
+        {
+            if (!app_throttle_unlock())
+            {
+                flight_state = FLIGHT_STATE_NORMAL;
+            }
+            break;
+        }
+        case FLIGHT_STATE_NORMAL:
+        {
+            if (remote_data.fix_height)
+            {
+                flight_state = FLIGHT_STATE_FIX_HIGH;
+            }
+            if (remote_state == REMOTE_STATE_DISCONNECT)
+            {
+                flight_state = FLIGHT_STATE_FAULT;
+            }
+            break;
+        }
+        case FLIGHT_STATE_FIX_HIGH:
+        {
+            if (remote_data.fix_height)
+            {
+                flight_state = FLIGHT_STATE_NORMAL;
+            }
+            if (remote_state == REMOTE_STATE_DISCONNECT)
+            {
+                flight_state = FLIGHT_STATE_FAULT;
+            }
+            break;
+        }
+        case FLIGHT_STATE_FAULT:
+        {
+            flight_state = FLIGHT_STATE_IDLE;
+            break;
+        }
+        default:
+        {
+            flight_state = FLIGHT_STATE_IDLE;
+            break;
+        }
+    }
+
 }

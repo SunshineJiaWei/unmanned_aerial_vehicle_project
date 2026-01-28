@@ -20,5 +20,6 @@
 
 uint8_t app_recv_data(void);
 void app_process_connect_state(uint8_t res);
+void app_process_flight_state(void);
 
 #endif /* __APP_RECV_DATA_H */

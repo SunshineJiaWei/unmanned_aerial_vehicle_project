@@ -119,7 +119,6 @@ void flight_task(void *pvParameters)
     }
 }
 
-static uint8_t si24r1_rx_buf[TX_PLOAD_WIDTH];
 void communicate_task(void *pvParameters)
 {
     DEBUG_PRINTF("communicate_task");
@@ -137,10 +136,22 @@ void communicate_task(void *pvParameters)
             xTaskNotifyGive(power_task_handle);
         }
 
+        app_process_flight_state();
+
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
     }
 }
 
+/**
+ * @brief LED任务
+ * 灯控状态：
+ *  1. 连接状态：左上，右上亮，左下，右下灭
+ *  2. 飞行状态：
+ *      空闲：  左下，右下500ms闪烁
+ *      正常飞：左下，右下200ms闪烁
+ *      定高：  左下，右下常亮
+ *      故障：  左下，右下灭
+ */
 void led_task(void *pvParameters)
 {
     DEBUG_PRINTF("led_task");

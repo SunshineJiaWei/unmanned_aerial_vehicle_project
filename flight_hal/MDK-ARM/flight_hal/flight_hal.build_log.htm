@@ -27,44 +27,20 @@ Project File Date:  01/28/2026
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Software\Keil5\ARM\ARMCC\Bin'
 Build target 'flight_hal'
-compiling int_ip5305t.c...
-interface\int_ip5305t.c(26): warning:  #1-D: last line of file ends without a newline
-  }
-interface\int_ip5305t.c: 1 warning, 0 errors
-compiling main.c...
-./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
-  #define READ_REG 0x00    // Define read command to register
-./interface/int_si24r1.h(26): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
-  #define WRITE_REG 0x20   // Define write command to register
-../Core/Src/main.c: 2 warnings, 0 errors
-compiling app_task.c...
-./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
-  #define READ_REG 0x00    // Define read command to register
-./interface/int_si24r1.h(26): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
-  #define WRITE_REG 0x20   // Define write command to register
-app\app_task.c(207): warning:  #174-D: expression has no effect
-              led_count == 0; 
-app\app_task.c(5): warning:  #177-D: variable "motor_left_top"  was declared but never referenced
-  static motor_t motor_left_top = {.tim = &htim3, .channel = TIM_CHANNEL_1, .speed = temp_speed};
-app\app_task.c(6): warning:  #177-D: variable "motor_left_bottom"  was declared but never referenced
-  static motor_t motor_left_bottom = {.tim = &htim4, .channel = TIM_CHANNEL_4, .speed = temp_speed};
-app\app_task.c(7): warning:  #177-D: variable "motor_right_top"  was declared but never referenced
-  static motor_t motor_right_top = {.tim = &htim2, .channel = TIM_CHANNEL_2, .speed = temp_speed};
-app\app_task.c(8): warning:  #177-D: variable "motor_right_bottom"  was declared but never referenced
-  static motor_t motor_right_bottom = {.tim = &htim1, .channel = TIM_CHANNEL_3, .speed = temp_speed};
-app\app_task.c(122): warning:  #177-D: variable "si24r1_rx_buf"  was declared but never referenced
-  static uint8_t si24r1_rx_buf[TX_PLOAD_WIDTH];
-app\app_task.c: 8 warnings, 0 errors
 compiling app_recv_data.c...
 ./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define READ_REG 0x00    // Define read command to register
 ./interface/int_si24r1.h(26): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define WRITE_REG 0x20   // Define write command to register
-app\app_recv_data.c: 2 warnings, 0 errors
+app\app_recv_data.c(150): warning:  #111-D: statement is unreachable
+              break;
+app\app_recv_data.c(211): warning:  #1-D: last line of file ends without a newline
+  }
+app\app_recv_data.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=16360 RO-data=312 RW-data=216 ZI-data=19128  
+Program Size: Code=16708 RO-data=312 RW-data=228 ZI-data=19108  
 FromELF: creating hex file...
-"flight_hal\flight_hal.axf" - 0 Error(s), 13 Warning(s).
+"flight_hal\flight_hal.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -88,7 +64,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:07
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

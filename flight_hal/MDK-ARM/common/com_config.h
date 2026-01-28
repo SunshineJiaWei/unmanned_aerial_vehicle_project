@@ -17,6 +17,15 @@ typedef enum
     FLIGHT_STATE_FAULT
 } flight_state_t;
 
+typedef enum
+{
+    THR_STATE_FREE,
+    THE_STATE_MAX,
+    THR_STATE_LEAVE_MAX,
+    THR_STATE_MIN,
+    THR_STATE_UNLOCK
+} thr_state_t;
+
 typedef struct 
 {
     uint8_t fix_height;
