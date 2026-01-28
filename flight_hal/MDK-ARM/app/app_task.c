@@ -14,7 +14,7 @@ static led_t led_right_top = {.port = LED2_GPIO_Port, .pin = LED2_Pin};
 static led_t led_right_bottom = {.port = LED3_GPIO_Port, .pin = LED3_Pin};
 
 // 遥控状态实例(连接状态)
-static remote_state_t remote_state = REMOTE_STATE_CONNECTED;
+remote_state_t remote_state = REMOTE_STATE_DISCONNECT;
 // 飞行状态实例
 static flight_state_t flight_state = FLIGHT_STATE_IDLE;
 
@@ -121,7 +121,8 @@ void communicate_task(void *pvParameters)
 
     while (1)
     {
-        app_recv_data();
+        uint8_t res = app_recv_data();
+        app_process_connect_state(res);
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
     }

@@ -4,6 +4,10 @@ static uint8_t recv_buf[TX_PLOAD_WIDTH];
 
 remote_data_t remote_data;
 
+extern remote_state_t remote_state;
+
+static uint8_t retry_count = 0;
+
 /**
  * @brief 
  * 
@@ -61,4 +65,22 @@ uint8_t app_recv_data(void)
     // }
 
     return 0;
+}
+
+void app_process_connect_state(uint8_t res)
+{
+    if (res == 0)
+    {
+        remote_state = REMOTE_STATE_CONNECTED;
+        retry_count = 0;
+    }
+    else
+    {
+        retry_count ++;
+        if (retry_count >= MAX_RETRY_COUNT)
+        {
+            remote_state = REMOTE_STATE_DISCONNECT;
+        }
+    }
+    
 }

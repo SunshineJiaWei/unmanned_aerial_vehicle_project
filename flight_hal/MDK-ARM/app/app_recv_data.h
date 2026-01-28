@@ -15,7 +15,10 @@
 #define FRAME_HEAD_1 0x55
 #define FRAME_HEAD_2 0x00
 
+#define MAX_RETRY_COUNT 10
+
 
 uint8_t app_recv_data(void);
+void app_process_connect_state(uint8_t res);
 
 #endif /* __APP_RECV_DATA_H */
