@@ -1,9 +1,6 @@
 #include "app_task.h"
 
 
-// 摇杆实例
-static joystick_t joystick;
-
 // 电源管理任务
 void power_task(void *pvParameters);
 #define POWER_TASK_STACK_SIZE 128
@@ -98,11 +95,8 @@ void key_task(void *pvParameters)
 
     while (1)
     {
-        key_t key = int_key_get();
-        if (key != KEY_NONE)
-        {
-            DEBUG_PRINTF("key: %d", key);
-        }
+        app_process_key_data();
+
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(KEY_TASK_PERIOD));
     }
 }
@@ -118,8 +112,7 @@ void joystick_task(void *pvParameters)
 
     while (1)
     {
-        int_joystick_get(&joystick);
-        DEBUG_PRINTF("throttle: %d, yaw: %d, pitch: %d, roll: %d\n", joystick.throttle, joystick.yaw, joystick.pitch, joystick.roll);
+        app_process_joystick_data();
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(JOYSTICK_TASK_PERIOD));
     }

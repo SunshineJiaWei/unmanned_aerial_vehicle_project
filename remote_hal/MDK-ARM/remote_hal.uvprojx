@@ -946,6 +946,11 @@
               <FileType>5</FileType>
               <FilePath>.\common\com_debug.h</FilePath>
             </File>
+            <File>
+              <FileName>com_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\common\com_utils.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1120,6 +1125,16 @@
               <FileName>app_task.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\app\app_task.h</FilePath>
+            </File>
+            <File>
+              <FileName>app_process_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\app\app_process_data.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_process_data.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\app\app_process_data.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -47,6 +47,8 @@
 .\remote_hal\app_task.o: ./interface/int_ip5305t.h
 .\remote_hal\app_task.o: ./interface/int_si24r1.h
 .\remote_hal\app_task.o: ../Core/Inc/spi.h
+.\remote_hal\app_task.o: app\app_process_data.h
 .\remote_hal\app_task.o: ./interface/int_key.h
 .\remote_hal\app_task.o: ./interface/int_joystick.h
 .\remote_hal\app_task.o: ../Core/Inc/adc.h
+.\remote_hal\app_task.o: ./common/com_utils.h

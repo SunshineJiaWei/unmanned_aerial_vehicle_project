@@ -14,8 +14,9 @@
 // 硬件接口层
 #include "int_ip5305t.h"
 #include "int_si24r1.h"
-#include "int_key.h"
-#include "int_joystick.h"
+
+// 应用层
+#include "app_process_data.h"
 
 void task_entry(void);
 

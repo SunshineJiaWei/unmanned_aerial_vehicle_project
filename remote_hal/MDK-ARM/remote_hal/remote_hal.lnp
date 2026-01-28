@@ -35,6 +35,7 @@
 ".\remote_hal\heap_4.o"
 ".\remote_hal\port.o"
 ".\remote_hal\app_task.o"
+".\remote_hal\app_process_data.o"
 ".\remote_hal\int_ip5305t.o"
 ".\remote_hal\int_si24r1.o"
 ".\remote_hal\int_key.o"

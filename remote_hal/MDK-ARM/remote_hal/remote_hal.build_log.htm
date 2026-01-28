@@ -21,26 +21,24 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-c:\Users\25150\Desktop\Unmanned_Aerial_Vehicle_Project\remote_hal\MDK-ARM\remote_hal.uvprojx
-Project File Date:  01/25/2026
+C:\Users\25150\Desktop\Unmanned_Aerial_Vehicle_Project\remote_hal\MDK-ARM\remote_hal.uvprojx
+Project File Date:  01/28/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Software\Keil5\ARM\ARMCC\Bin'
 Build target 'remote_hal'
-compiling app_task.c...
-./interface/int_si24r1.h(24): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
-  #define READ_REG 0x00    // Define read command to register
-./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
-  #define WRITE_REG 0x20   // Define write command to register
+compiling app_process_data.c...
 ./interface/int_key.h(27): warning:  #14-D: extra text after expected end of preprocessing directive
   #endif /* __INT_KEY_H *//
 ./interface/int_joystick.h(23): warning:  #1-D: last line of file ends without a newline
   #endif /* __INT_JOYSTICK_H */
-app\app_task.c: 4 warnings, 0 errors
+app\app_process_data.h(31): warning:  #1-D: last line of file ends without a newline
+  #endif /* __APP_PROCESS_DATA_H */
+app\app_process_data.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=15220 RO-data=312 RW-data=160 ZI-data=18944  
+Program Size: Code=15864 RO-data=312 RW-data=172 ZI-data=18956  
 FromELF: creating hex file...
-".\remote_hal\remote_hal.axf" - 0 Error(s), 4 Warning(s).
+".\remote_hal\remote_hal.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
