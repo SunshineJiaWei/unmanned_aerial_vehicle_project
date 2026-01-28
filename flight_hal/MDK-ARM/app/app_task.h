@@ -18,6 +18,9 @@
 #include "int_led.h"
 #include "int_si24r1.h"
 
+// 应用层
+#include "app_recv_data.h"
+
 void task_entry(void);
 
 

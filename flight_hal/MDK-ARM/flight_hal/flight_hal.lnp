@@ -34,6 +34,7 @@
 "flight_hal\heap_4.o"
 "flight_hal\port.o"
 "flight_hal\app_task.o"
+"flight_hal\app_recv_data.o"
 "flight_hal\int_ip5305t.o"
 "flight_hal\int_motor.o"
 "flight_hal\int_led.o"

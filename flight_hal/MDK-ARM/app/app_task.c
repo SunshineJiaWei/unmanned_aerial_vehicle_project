@@ -121,11 +121,7 @@ void communicate_task(void *pvParameters)
 
     while (1)
     {
-        uint8_t res = int_si24r1_rx_packet(si24r1_rx_buf);
-        if (!res)
-        {
-            DEBUG_PRINTF("rx: %s\n", si24r1_rx_buf);
-        }
+        app_recv_data();
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
     }

@@ -52,3 +52,4 @@ flight_hal\main.o: ./interface/int_ip5305t.h
 flight_hal\main.o: ./interface/int_motor.h
 flight_hal\main.o: ./interface/int_led.h
 flight_hal\main.o: ./interface/int_si24r1.h
+flight_hal\main.o: ./app/app_recv_data.h

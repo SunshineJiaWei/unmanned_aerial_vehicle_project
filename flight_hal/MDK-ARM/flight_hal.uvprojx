@@ -1070,6 +1070,16 @@
               <FileType>5</FileType>
               <FilePath>.\app\app_task.h</FilePath>
             </File>
+            <File>
+              <FileName>app_recv_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\app\app_recv_data.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_recv_data.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\app\app_recv_data.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
