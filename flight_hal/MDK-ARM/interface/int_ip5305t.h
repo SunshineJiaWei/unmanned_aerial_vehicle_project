@@ -8,6 +8,7 @@
 
 
 void int_ip5305t_start(void);
+void int_ip5305t_shutdown(void);
 
 
 #endif /* __INT_IP5305T_H */

@@ -1,11 +1,9 @@
 #include "app_recv_data.h"
 
-static uint8_t recv_buf[TX_PLOAD_WIDTH];
-
-remote_data_t remote_data;
-
+extern remote_data_t remote_data;
 extern remote_state_t remote_state;
 
+static uint8_t recv_buf[TX_PLOAD_WIDTH];
 static uint8_t retry_count = 0;
 
 /**

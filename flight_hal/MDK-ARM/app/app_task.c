@@ -16,7 +16,9 @@ static led_t led_right_bottom = {.port = LED3_GPIO_Port, .pin = LED3_Pin};
 // 遥控状态实例(连接状态)
 remote_state_t remote_state = REMOTE_STATE_DISCONNECT;
 // 飞行状态实例
-static flight_state_t flight_state = FLIGHT_STATE_IDLE;
+flight_state_t flight_state = FLIGHT_STATE_IDLE;
+// 遥控数据实例
+remote_data_t remote_data;
 
 
 void app_task(void *pvParameters);
@@ -79,13 +81,18 @@ void power_task(void *pvParameters)
 {
     DEBUG_PRINTF("power_task");
 
-    TickType_t start_time = xTaskGetTickCount();
-
     while (1)
     {
-        vTaskDelayUntil(&start_time, pdMS_TO_TICKS(POWER_TASK_PERIOD));
+        uint32_t res = ulTaskNotifyTake(pdTRUE, POWER_TASK_PERIOD);
+        if (res != 0)
+        {
+            int_ip5305t_shutdown();
+        }
+        else
+        {
+            int_ip5305t_start();
+        }
         
-        int_ip5305t_start();
     }
 }
 
@@ -123,6 +130,12 @@ void communicate_task(void *pvParameters)
     {
         uint8_t res = app_recv_data();
         app_process_connect_state(res);
+
+        if (remote_data.shutdown == 1)
+        {
+            // int_ip5305t_shutdown();
+            xTaskNotifyGive(power_task_handle);
+        }
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
     }
