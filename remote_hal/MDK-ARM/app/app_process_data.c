@@ -127,6 +127,10 @@ void app_process_joystick_data(void)
 
     taskEXIT_CRITICAL();
 
+    remote_data.throttle = joystick.throttle;
+    remote_data.pitch = joystick.pitch;
+    remote_data.roll = joystick.roll;
+    remote_data.yaw = joystick.yaw;
 
-    DEBUG_PRINTF(":%d,%d,%d,%d\n", joystick.throttle, joystick.yaw, joystick.pitch, joystick.roll);
+    // DEBUG_PRINTF(":%d,%d,%d,%d\n", joystick.throttle, joystick.yaw, joystick.pitch, joystick.roll);
 }  

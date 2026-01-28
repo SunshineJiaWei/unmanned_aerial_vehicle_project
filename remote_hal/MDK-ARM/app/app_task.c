@@ -75,13 +75,19 @@ void communicate_task(void *pvParameters)
 
     while (1)
     {
-        int_si24r1_tx_mode();
+        app_transmit_data();
 
-        char *temp = "hello flight";
-        memcpy(si24r1_tx_buf, temp, strlen(temp));
-        int_si24r1_tx_packet(si24r1_tx_buf);
+        // int_si24r1_tx_mode();
+        // si24r1_tx_buf[0] = 'h';
+        // si24r1_tx_buf[1] = 'e';
+        // si24r1_tx_buf[2] = 'l';
+        // si24r1_tx_buf[3] = 'l';
+        // si24r1_tx_buf[4] = 'o';
 
-        int_si24r1_rx_mode();
+
+        // int_si24r1_tx_packet(si24r1_tx_buf);
+
+        // int_si24r1_rx_mode();
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
     }

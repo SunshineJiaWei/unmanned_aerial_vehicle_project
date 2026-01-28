@@ -1136,6 +1136,16 @@
               <FileType>5</FileType>
               <FilePath>.\app\app_process_data.h</FilePath>
             </File>
+            <File>
+              <FileName>app_transmit_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\app\app_transmit_data.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_transmit_data.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\app\app_transmit_data.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

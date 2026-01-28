@@ -13,10 +13,10 @@
 
 // 硬件接口层
 #include "int_ip5305t.h"
-#include "int_si24r1.h"
 
 // 应用层
 #include "app_process_data.h"
+#include "app_transmit_data.h"
 
 void task_entry(void);
 
