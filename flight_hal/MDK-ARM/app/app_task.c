@@ -19,6 +19,8 @@ remote_state_t remote_state = REMOTE_STATE_DISCONNECT;
 flight_state_t flight_state = FLIGHT_STATE_IDLE;
 // 遥控数据实例
 remote_data_t remote_data;
+// 欧拉角实例
+euler_angle_t euler_angle;
 
 
 void app_task(void *pvParameters);
@@ -102,17 +104,11 @@ void flight_task(void *pvParameters)
 
     TickType_t start_time = xTaskGetTickCount();
 
+    app_flight_init();
+
     while (1)
     {
-        // int_motor_set_speed(&motor_left_top);
-        // int_motor_set_speed(&motor_left_bottom);
-        // int_motor_set_speed(&motor_right_top);
-        // int_motor_set_speed(&motor_right_bottom);
-
-        // int_motor_start(&motor_left_top);
-        // int_motor_start(&motor_left_bottom);
-        // int_motor_start(&motor_right_top);
-        // int_motor_start(&motor_right_bottom);
+        app_flight_get_euler_angle();
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(FLIGHT_TASK_PERIOD));
         
@@ -132,7 +128,6 @@ void communicate_task(void *pvParameters)
 
         if (remote_data.shutdown == 1)
         {
-            // int_ip5305t_shutdown();
             xTaskNotifyGive(power_task_handle);
         }
 

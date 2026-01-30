@@ -22,25 +22,21 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 c:\Users\25150\Desktop\Unmanned_Aerial_Vehicle_Project\flight_hal\MDK-ARM\flight_hal.uvprojx
-Project File Date:  01/28/2026
+Project File Date:  01/30/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Software\Keil5\ARM\ARMCC\Bin'
 Build target 'flight_hal'
-compiling app_recv_data.c...
-./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
-  #define READ_REG 0x00    // Define read command to register
-./interface/int_si24r1.h(26): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
-  #define WRITE_REG 0x20   // Define write command to register
-app\app_recv_data.c(150): warning:  #111-D: statement is unreachable
-              break;
-app\app_recv_data.c(211): warning:  #1-D: last line of file ends without a newline
+compiling app_flight.c...
+app\app_flight.h(15): warning:  #1-D: last line of file ends without a newline
+  #endif /* __APP_FLIGHT_H */
+app\app_flight.c(21): warning:  #1-D: last line of file ends without a newline
   }
-app\app_recv_data.c: 4 warnings, 0 errors
+app\app_flight.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=16708 RO-data=312 RW-data=228 ZI-data=19108  
+Program Size: Code=21032 RO-data=312 RW-data=244 ZI-data=19204  
 FromELF: creating hex file...
-"flight_hal\flight_hal.axf" - 0 Error(s), 4 Warning(s).
+"flight_hal\flight_hal.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -64,7 +60,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

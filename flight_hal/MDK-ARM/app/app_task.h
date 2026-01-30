@@ -20,6 +20,7 @@
 
 // 应用层
 #include "app_recv_data.h"
+#include "app_flight.h"
 
 void task_entry(void);
 

@@ -39,6 +39,7 @@ flight_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.
 flight_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 flight_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 flight_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+flight_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 flight_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 flight_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 flight_hal\app_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
@@ -52,3 +53,7 @@ flight_hal\app_task.o: ./interface/int_led.h
 flight_hal\app_task.o: ./interface/int_si24r1.h
 flight_hal\app_task.o: ../Core/Inc/spi.h
 flight_hal\app_task.o: app\app_recv_data.h
+flight_hal\app_task.o: app\app_flight.h
+flight_hal\app_task.o: ./interface/int_mpu6050.h
+flight_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+flight_hal\app_task.o: ../Core/Inc/i2c.h
