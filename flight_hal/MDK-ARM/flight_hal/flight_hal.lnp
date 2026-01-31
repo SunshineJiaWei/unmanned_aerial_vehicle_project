@@ -26,6 +26,7 @@
 "flight_hal\stm32f1xx_hal_uart.o"
 "flight_hal\system_stm32f1xx.o"
 "flight_hal\com_debug.o"
+"flight_hal\com_filter.o"
 "flight_hal\croutine.o"
 "flight_hal\event_groups.o"
 "flight_hal\list.o"

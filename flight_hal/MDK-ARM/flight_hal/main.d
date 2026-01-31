@@ -58,3 +58,4 @@ flight_hal\main.o: ./app/app_recv_data.h
 flight_hal\main.o: ./app/app_flight.h
 flight_hal\main.o: ./interface/int_mpu6050.h
 flight_hal\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+flight_hal\main.o: ./common/com_filter.h

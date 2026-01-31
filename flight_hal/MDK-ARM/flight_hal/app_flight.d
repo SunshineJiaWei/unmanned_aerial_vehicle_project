@@ -48,3 +48,4 @@ flight_hal\app_flight.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 flight_hal\app_flight.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
 flight_hal\app_flight.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\string.h
 flight_hal\app_flight.o: ../Core/Inc/usart.h
+flight_hal\app_flight.o: ./common/com_filter.h
