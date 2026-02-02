@@ -1,7 +1,7 @@
 #ifndef __APP_FLIGHT_H
 #define __APP_FLIGHT_H
 
-
+#include <math.h>
 #include "int_mpu6050.h"
 #include "com_debug.h"
 #include "com_filter.h"

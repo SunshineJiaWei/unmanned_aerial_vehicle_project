@@ -27,7 +27,12 @@ Project File Date:  01/31/2026
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Software\Keil5\ARM\ARMCC\Bin'
 Build target 'flight_hal'
-compiling com_filter.c...
+compiling app_flight.c...
+app\app_flight.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif /* __APP_FLIGHT_H */
+app\app_flight.c(38): warning:  #1-D: last line of file ends without a newline
+  }
+app\app_flight.c: 2 warnings, 0 errors
 compiling app_task.c...
 ./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define READ_REG 0x00    // Define read command to register
@@ -54,14 +59,8 @@ compiling main.c...
 ./app/app_flight.h(16): warning:  #1-D: last line of file ends without a newline
   #endif /* __APP_FLIGHT_H */
 ../Core/Src/main.c: 3 warnings, 0 errors
-compiling app_flight.c...
-app\app_flight.h(16): warning:  #1-D: last line of file ends without a newline
-  #endif /* __APP_FLIGHT_H */
-app\app_flight.c(35): warning:  #1-D: last line of file ends without a newline
-  }
-app\app_flight.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=23040 RO-data=312 RW-data=316 ZI-data=19204  
+Program Size: Code=24868 RO-data=476 RW-data=336 ZI-data=19208  
 FromELF: creating hex file...
 "flight_hal\flight_hal.axf" - 0 Error(s), 13 Warning(s).
 
@@ -87,7 +86,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:08
+Build Time Elapsed:  00:00:17
 </pre>
 </body>
 </html>

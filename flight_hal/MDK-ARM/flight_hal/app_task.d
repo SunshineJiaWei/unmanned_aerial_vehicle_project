@@ -54,6 +54,7 @@ flight_hal\app_task.o: ./interface/int_si24r1.h
 flight_hal\app_task.o: ../Core/Inc/spi.h
 flight_hal\app_task.o: app\app_recv_data.h
 flight_hal\app_task.o: app\app_flight.h
+flight_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\math.h
 flight_hal\app_task.o: ./interface/int_mpu6050.h
 flight_hal\app_task.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 flight_hal\app_task.o: ../Core/Inc/i2c.h

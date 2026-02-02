@@ -1,5 +1,6 @@
 flight_hal\app_flight.o: app\app_flight.c
 flight_hal\app_flight.o: app\app_flight.h
+flight_hal\app_flight.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\math.h
 flight_hal\app_flight.o: ./interface/int_mpu6050.h
 flight_hal\app_flight.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 flight_hal\app_flight.o: ../Core/Inc/i2c.h
