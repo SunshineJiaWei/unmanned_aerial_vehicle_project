@@ -60,3 +60,4 @@ flight_hal\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\math.h
 flight_hal\main.o: ./interface/int_mpu6050.h
 flight_hal\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 flight_hal\main.o: ./common/com_filter.h
+flight_hal\main.o: ./common/com_imu.h

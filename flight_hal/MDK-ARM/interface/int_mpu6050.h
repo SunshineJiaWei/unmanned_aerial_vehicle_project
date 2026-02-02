@@ -3,10 +3,10 @@
 
 
 #include <stdlib.h>
-
 #include "i2c.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "com_config.h"
 
 #define MPU6050_SLAVE_ADDR              0x68
 #define MPU6050_ADDR_WRITE              0xD0
@@ -34,34 +34,6 @@
 #define MPU_GYRO_YOUT_L                 0x46
 #define MPU_GYRO_ZOUT_H                 0x47
 #define MPU_GYRO_ZOUT_L                 0x48
-
-
-typedef struct
-{
-    int16_t accel_x;    // 向前的加速度为正
-    int16_t accel_y;    // 向左的加速度为正
-    int16_t accel_z;    // 向上的加速度为正
-} mpu6050_accel_t;
-
-typedef struct
-{
-    int16_t gyro_x;     // 横滚角roll：向右是正
-    int16_t gyro_y;     // 俯仰角pitch：向前是正
-    int16_t gyro_z;     // 偏航角yaw：向左（逆时针转）是正
-} mpu6050_gyro_t;
-
-typedef struct
-{
-    int16_t roll;
-    int16_t pitch;
-    int16_t yaw;
-} euler_angle_t;
-
-typedef struct
-{
-    mpu6050_accel_t accel;
-    mpu6050_gyro_t gyro;
-} mpu6050_data_t;
 
 
 void int_mpu6050_init(void);

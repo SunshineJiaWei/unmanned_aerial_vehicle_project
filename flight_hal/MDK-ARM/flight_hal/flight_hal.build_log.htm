@@ -22,24 +22,27 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 c:\Users\25150\Desktop\Unmanned_Aerial_Vehicle_Project\flight_hal\MDK-ARM\flight_hal.uvprojx
-Project File Date:  01/31/2026
+Project File Date:  02/02/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Software\Keil5\ARM\ARMCC\Bin'
 Build target 'flight_hal'
-compiling app_flight.c...
-app\app_flight.h(16): warning:  #1-D: last line of file ends without a newline
-  #endif /* __APP_FLIGHT_H */
-app\app_flight.c(38): warning:  #1-D: last line of file ends without a newline
+compiling com_imu.c...
+compiling app_recv_data.c...
+./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
+  #define READ_REG 0x00    // Define read command to register
+./interface/int_si24r1.h(26): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
+  #define WRITE_REG 0x20   // Define write command to register
+app\app_recv_data.c(150): warning:  #111-D: statement is unreachable
+              break;
+app\app_recv_data.c(211): warning:  #1-D: last line of file ends without a newline
   }
-app\app_flight.c: 2 warnings, 0 errors
+app\app_recv_data.c: 4 warnings, 0 errors
 compiling app_task.c...
 ./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define READ_REG 0x00    // Define read command to register
 ./interface/int_si24r1.h(26): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define WRITE_REG 0x20   // Define write command to register
-app\app_flight.h(16): warning:  #1-D: last line of file ends without a newline
-  #endif /* __APP_FLIGHT_H */
 app\app_task.c(213): warning:  #174-D: expression has no effect
               led_count == 0; 
 app\app_task.c(5): warning:  #177-D: variable "motor_left_top"  was declared but never referenced
@@ -50,19 +53,25 @@ app\app_task.c(7): warning:  #177-D: variable "motor_right_top"  was declared bu
   static motor_t motor_right_top = {.tim = &htim2, .channel = TIM_CHANNEL_2, .speed = temp_speed};
 app\app_task.c(8): warning:  #177-D: variable "motor_right_bottom"  was declared but never referenced
   static motor_t motor_right_bottom = {.tim = &htim1, .channel = TIM_CHANNEL_3, .speed = temp_speed};
-app\app_task.c: 8 warnings, 0 errors
+app\app_task.c: 7 warnings, 0 errors
+compiling int_mpu6050.c...
+interface\int_mpu6050.c(155): warning:  #1-D: last line of file ends without a newline
+   
+interface\int_mpu6050.c: 1 warning, 0 errors
+compiling app_flight.c...
+app\app_flight.c(42): warning:  #1-D: last line of file ends without a newline
+  }
+app\app_flight.c: 1 warning, 0 errors
 compiling main.c...
 ./interface/int_si24r1.h(25): warning:  #47-D: incompatible redefinition of macro "READ_REG"  (declared at line 187 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define READ_REG 0x00    // Define read command to register
 ./interface/int_si24r1.h(26): warning:  #47-D: incompatible redefinition of macro "WRITE_REG"  (declared at line 185 of "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h")
   #define WRITE_REG 0x20   // Define write command to register
-./app/app_flight.h(16): warning:  #1-D: last line of file ends without a newline
-  #endif /* __APP_FLIGHT_H */
-../Core/Src/main.c: 3 warnings, 0 errors
+../Core/Src/main.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=24868 RO-data=476 RW-data=336 ZI-data=19208  
+Program Size: Code=28524 RO-data=396 RW-data=372 ZI-data=19236  
 FromELF: creating hex file...
-"flight_hal\flight_hal.axf" - 0 Error(s), 13 Warning(s).
+"flight_hal\flight_hal.axf" - 0 Error(s), 15 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -86,7 +95,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:17
+Build Time Elapsed:  00:00:09
 </pre>
 </body>
 </html>

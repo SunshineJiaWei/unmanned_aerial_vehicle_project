@@ -23,11 +23,6 @@ remote_data_t remote_data;
 euler_angle_t euler_angle;
 
 
-void app_task(void *pvParameters);
-#define APP_TASK_STACK_SIZE 128
-#define APP_TaSK_PRIORITY 1
-TaskHandle_t app_task_handle;
-
 // 电源管理任务
 void power_task(void *pvParameters);
 #define POWER_TASK_STACK_SIZE 128
@@ -58,25 +53,12 @@ TaskHandle_t led_task_handle;
 
 void task_entry(void)
 {
-    // xTaskCreate(app_task, "app_task", APP_TASK_STACK_SIZE, NULL, APP_TaSK_PRIORITY, &app_task_handle);
     xTaskCreate(power_task, "power_task", POWER_TASK_STACK_SIZE, NULL, POWER_TASK_PRIORITY, &power_task_handle);
     xTaskCreate(flight_task, "flight_task", FLIGHT_TASK_STACK_SIZE, NULL, FLIGHT_TASK_PRIORITY, &flight_task_handle);
     xTaskCreate(communicate_task, "communicate_task", POWER_TASK_STACK_SIZE, NULL, COMMUNICATE_TASK_PRIORITY, &communicate_task_handle);
     xTaskCreate(led_task, "led_task", LED_TASK_STACK_SIZE, NULL, LED_TASK_PRIORITY, &led_task_handle);
 
     vTaskStartScheduler();
-}
-
-void app_task(void *pvParameters)
-{
-
-    while (1)
-    {
-        DEBUG_PRINTF("app_task");
-        vTaskDelay(1000);
-
-    }
-
 }
 
 void power_task(void *pvParameters)
@@ -111,7 +93,6 @@ void flight_task(void *pvParameters)
         app_flight_get_euler_angle();
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(FLIGHT_TASK_PERIOD));
-        
     }
 }
 

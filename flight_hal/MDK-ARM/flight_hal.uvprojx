@@ -1017,6 +1017,16 @@
               <FileType>5</FileType>
               <FilePath>.\common\com_filter.h</FilePath>
             </File>
+            <File>
+              <FileName>com_imu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\common\com_imu.c</FilePath>
+            </File>
+            <File>
+              <FileName>com_imu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\common\com_imu.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

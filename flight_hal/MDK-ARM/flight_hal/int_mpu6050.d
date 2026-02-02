@@ -42,3 +42,4 @@ flight_hal\int_mpu6050.o: ./freeRTOS/portable/portmacro.h
 flight_hal\int_mpu6050.o: ./freeRTOS/include/mpu_wrappers.h
 flight_hal\int_mpu6050.o: ./freeRTOS/include/task.h
 flight_hal\int_mpu6050.o: ./freeRTOS/include/list.h
+flight_hal\int_mpu6050.o: ./common/com_config.h
