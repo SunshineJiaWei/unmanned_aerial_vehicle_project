@@ -28,6 +28,7 @@
 "flight_hal\com_debug.o"
 "flight_hal\com_filter.o"
 "flight_hal\com_imu.o"
+"flight_hal\com_pid.o"
 "flight_hal\croutine.o"
 "flight_hal\event_groups.o"
 "flight_hal\list.o"
@@ -45,6 +46,10 @@
 "flight_hal\int_led.o"
 "flight_hal\int_si24r1.o"
 "flight_hal\int_mpu6050.o"
+"flight_hal\vl53l1_platform.o"
+"flight_hal\vl53l1x_api.o"
+"flight_hal\vl53l1x_calibration.o"
+"flight_hal\int_vl53l1.o"
 --library_type=microlib --strict --scatter "flight_hal\flight_hal.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

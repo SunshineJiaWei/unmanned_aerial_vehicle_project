@@ -48,3 +48,10 @@ flight_hal\app_recv_data.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_ti
 flight_hal\app_recv_data.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 flight_hal\app_recv_data.o: ./interface/int_si24r1.h
 flight_hal\app_recv_data.o: ../Core/Inc/spi.h
+flight_hal\app_recv_data.o: .\interface\fix_high\int_vl53l1.h
+flight_hal\app_recv_data.o: .\interface\fix_high\vl53l1_platform.h
+flight_hal\app_recv_data.o: .\interface\fix_high\vl53l1_types.h
+flight_hal\app_recv_data.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+flight_hal\app_recv_data.o: ../Core/Inc/i2c.h
+flight_hal\app_recv_data.o: .\interface\fix_high\VL53L1X_api.h
+flight_hal\app_recv_data.o: .\interface\fix_high\VL53L1X_calibration.h

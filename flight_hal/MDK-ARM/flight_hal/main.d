@@ -55,9 +55,16 @@ flight_hal\main.o: ./interface/int_motor.h
 flight_hal\main.o: ./interface/int_led.h
 flight_hal\main.o: ./interface/int_si24r1.h
 flight_hal\main.o: ./app/app_recv_data.h
+flight_hal\main.o: .\interface\fix_high\int_vl53l1.h
+flight_hal\main.o: .\interface\fix_high\vl53l1_platform.h
+flight_hal\main.o: .\interface\fix_high\vl53l1_types.h
+flight_hal\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+flight_hal\main.o: .\interface\fix_high\VL53L1X_api.h
+flight_hal\main.o: .\interface\fix_high\VL53L1X_calibration.h
 flight_hal\main.o: ./app/app_flight.h
 flight_hal\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\math.h
 flight_hal\main.o: ./interface/int_mpu6050.h
-flight_hal\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 flight_hal\main.o: ./common/com_filter.h
 flight_hal\main.o: ./common/com_imu.h
+flight_hal\main.o: ./common/com_pid.h
+flight_hal\main.o: ./common/com_utils.h

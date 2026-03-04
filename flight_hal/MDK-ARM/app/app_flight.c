@@ -2,14 +2,52 @@
 
 
 extern euler_angle_t euler_angle;
+extern remote_data_t remote_data;
+extern flight_state_t flight_state;
+extern uint16_t target_height;
+extern TaskHandle_t communicate_task_handle;
+
 static mpu6050_data_t mpu_data;
 static mpu6050_gyro_t last_gyro;
 // static float gyro_z_sum;
 
+// 记录上一次电机转速，用于斜率限制
+static uint16_t last_motor_speed[4] = {0, 0, 0, 0};
+
+// 电机实例
+static motor_t motor_left_top = {.tim = &htim3, .channel = TIM_CHANNEL_1, .speed = 0};
+static motor_t motor_left_bottom = {.tim = &htim4, .channel = TIM_CHANNEL_4, .speed = 0};
+static motor_t motor_right_top = {.tim = &htim2, .channel = TIM_CHANNEL_2, .speed = 0};
+static motor_t motor_right_bottom = {.tim = &htim1, .channel = TIM_CHANNEL_3, .speed = 0};
+
+// 俯仰角
+pid_t pitch_pid = {.kp = -7.00, .ki = 0.00, .kd = 0.00};
+pid_t gyro_y_pid = {.kp = 3.00, .ki = 0.00, .kd = 0.50};
+
+// 横滚角
+pid_t roll_pid = {.kp = -7.00, .ki = 0.00, .kd = 0.00};
+pid_t gyro_x_pid = {.kp = 3.00, .ki = 0.00, .kd = 0.50};
+
+// 偏航角
+pid_t yaw_pid = {.kp = -3.00, .ki = 0.00, .kd = 0.00};
+pid_t gyro_z_pid = {.kp = -5.00, .ki = 0.00, .kd = 0.00};
+
+// 定高pid - 降低微分系数以减少急剧响应
+pid_t altitude_pid = {.kp = -0.60, .ki = 0.00, .kd = -0.05};
+
+static void app_motor_init(void)
+{
+    int_motor_start(&motor_left_top);
+    int_motor_start(&motor_left_bottom);
+    int_motor_start(&motor_right_top);
+    int_motor_start(&motor_right_bottom);
+}
 
 void app_flight_init(void)
 {
     int_mpu6050_init();
+    int_vl53l1_init();
+    app_motor_init();
 }
 
 void app_flight_get_euler_angle(void)
@@ -38,5 +76,152 @@ void app_flight_get_euler_angle(void)
 
     // 四元数姿态解算
     Common_IMU_GetEulerAngle(&mpu_data, &euler_angle, SAMPLING_DT);
-    DEBUG_PRINTF(":%.2f,%.2f,%.2f\n", euler_angle.pitch, euler_angle.roll, euler_angle.yaw);
+    // DEBUG_PRINTF(":%.2f,%.2f,%.2f\n", euler_angle.pitch, euler_angle.roll, euler_angle.yaw);
+}
+
+void app_flight_pid_process(void)
+{
+    // 俯仰角
+    // 外环：
+    // 目标角度
+    // 限幅：raw遥控器数据为0-1000，默认居中500。飞机俯仰角最高+-10°
+    pitch_pid.desire_val = (remote_data.pitch - 500) / 50.0f;
+    // 测量角度
+    pitch_pid.measure_val = euler_angle.pitch;
+
+    // 内环：
+    // 测量角速度
+    gyro_y_pid.measure_val = (mpu_data.gyro.gyro_y * 2000.0f / 32768.0f);
+
+    com_pid_cascade(&pitch_pid, &gyro_y_pid);
+
+    // DEBUG_PRINTF(":%.2f, %.2f\n", gyro_y_pid.err, gyro_y_pid.output);
+
+    // 横滚角
+    // 外环：
+    // 目标角度
+    // 限幅：raw遥控器数据为0-1000，默认居中500。飞机俯仰角最高+-10°
+    roll_pid.desire_val = (remote_data.roll - 500) / 50.0f;
+    // 测量角度
+    roll_pid.measure_val = euler_angle.roll;
+
+    // 内环：
+    // 测量角速度
+    gyro_x_pid.measure_val = (mpu_data.gyro.gyro_x * 2000.0f / 32768.0f);
+
+    com_pid_cascade(&roll_pid, &gyro_x_pid);
+
+    // 偏航角
+    // 外环：
+    // 目标角度
+    // 限幅：raw遥控器数据为0-1000，默认居中500。飞机俯仰角最高+-10°
+    yaw_pid.desire_val = (remote_data.yaw - 500) / 50.0f;
+    // 测量角度
+    yaw_pid.measure_val = euler_angle.yaw;
+
+    // 内环：
+    // 测量角速度
+    gyro_z_pid.measure_val = (mpu_data.gyro.gyro_z * 2000.0f / 32768.0f);
+
+    com_pid_cascade(&yaw_pid, &gyro_z_pid);
+}
+
+void app_fix_high_pid_process(void)
+{
+    altitude_pid.desire_val = target_height;
+    altitude_pid.measure_val = int_vl53l1_get_distance();
+    com_pid_calc(&altitude_pid);
+
+    // 限制高度PID输出幅度，防止电机过流
+    // 负值不超过-150，正值不超过100（减少抬升时的冲击）
+    altitude_pid.output = COM_LIMIT_RANGE(altitude_pid.output, -150, 100);
+}
+
+void app_flight_control_motor(void)
+{
+    switch (flight_state)
+    {
+        case FLIGHT_STATE_IDLE:
+        {
+            motor_left_top.speed = 0;
+            motor_left_bottom.speed = 0;
+            motor_right_top.speed = 0;
+            motor_right_bottom.speed = 0;
+            break;
+        }
+        case FLIGHT_STATE_NORMAL:
+        {
+            // 这里+-与极性相关，或者修改pid系数正负也可以实现极性修改，如果极性错误，则会加速下降，无法实现负反馈控制
+            // 外环只控制角速度，内环的角速度控制电机转速
+            // 偏航角：是对角线为一组，俯仰角：是前面为一组，横滚角：是侧面为一组
+            // 这里z轴对油门的影响比例不那么重要，限制其对油门的输出值
+            motor_left_top.speed = remote_data.throttle + gyro_y_pid.output - gyro_x_pid.output + COM_LIMIT_RANGE(gyro_z_pid.output, -100, 100);
+            motor_left_bottom.speed = remote_data.throttle - gyro_y_pid.output - gyro_x_pid.output - COM_LIMIT_RANGE(gyro_z_pid.output, -100, 100);
+            motor_right_top.speed = remote_data.throttle + gyro_y_pid.output + gyro_x_pid.output - COM_LIMIT_RANGE(gyro_z_pid.output, -100, 100);
+            motor_right_bottom.speed = remote_data.throttle - gyro_y_pid.output + gyro_x_pid.output + COM_LIMIT_RANGE(gyro_z_pid.output, -100, 100);
+            break;
+        }
+        case FLIGHT_STATE_FIX_HIGH:
+        {
+            motor_left_top.speed = remote_data.throttle + gyro_y_pid.output - gyro_x_pid.output + COM_LIMIT_RANGE(gyro_z_pid.output, -100, 100) + altitude_pid.output;
+            motor_left_bottom.speed = remote_data.throttle - gyro_y_pid.output - gyro_x_pid.output - COM_LIMIT_RANGE(gyro_z_pid.output, -100, 100) + altitude_pid.output;
+            motor_right_top.speed = remote_data.throttle + gyro_y_pid.output + gyro_x_pid.output - COM_LIMIT_RANGE(gyro_z_pid.output, -100, 100) + altitude_pid.output;
+            motor_right_bottom.speed = remote_data.throttle - gyro_y_pid.output + gyro_x_pid.output + COM_LIMIT_RANGE(gyro_z_pid.output, -100, 100) + altitude_pid.output;
+            break;
+        }
+        case FLIGHT_STATE_FAULT:
+        {
+            motor_left_top.speed -= 2;
+            motor_left_bottom.speed -= 2;
+            motor_right_top.speed -= 2;
+            motor_right_bottom.speed -= 2;
+            if (motor_left_top.speed <= 0 && motor_left_bottom.speed <= 0 && motor_right_top.speed <= 0 && motor_right_bottom.speed <= 0)
+            {
+                xTaskNotifyGive(communicate_task_handle);
+            }
+            break;
+        }
+        
+        default:
+        {
+
+            break;
+        }
+    }
+
+    // 限制电机转速上限
+    motor_left_top.speed = COM_LIMIT_THROTTLE(motor_left_top.speed);
+    motor_left_bottom.speed = COM_LIMIT_THROTTLE(motor_left_bottom.speed);
+    motor_right_top.speed = COM_LIMIT_THROTTLE(motor_right_top.speed);
+    motor_right_bottom.speed = COM_LIMIT_THROTTLE(motor_right_bottom.speed);
+
+    // 防止过流的额外保护：限制电机总功率
+    // 如果所有电机都在高转速，按比例降低以避免过流
+    float motor_sum = motor_left_top.speed + motor_left_bottom.speed +
+                     motor_right_top.speed + motor_right_bottom.speed;
+    const float MAX_TOTAL_POWER = 2000.0f;  // 四个电机的总功率上限
+    if (motor_sum > MAX_TOTAL_POWER)
+    {
+        float scale = MAX_TOTAL_POWER / motor_sum;
+        motor_left_top.speed = (uint16_t)(motor_left_top.speed * scale);
+        motor_left_bottom.speed = (uint16_t)(motor_left_bottom.speed * scale);
+        motor_right_top.speed = (uint16_t)(motor_right_top.speed * scale);
+        motor_right_bottom.speed = (uint16_t)(motor_right_bottom.speed * scale);
+    }
+
+    // DEBUG_PRINTF(":%d,%d,%d,%d\n", motor_left_top.speed, motor_left_bottom.speed, motor_right_top.speed, motor_right_bottom.speed);
+
+    if (remote_data.throttle <= 50)
+    {
+        // 保护逻辑
+        motor_left_top.speed = 0;
+        motor_left_bottom.speed = 0;
+        motor_right_top.speed = 0;
+        motor_right_bottom.speed = 0;
+    }
+
+    int_motor_set_speed(&motor_left_top);
+    int_motor_set_speed(&motor_left_bottom);
+    int_motor_set_speed(&motor_right_top);
+    int_motor_set_speed(&motor_right_bottom);
 }

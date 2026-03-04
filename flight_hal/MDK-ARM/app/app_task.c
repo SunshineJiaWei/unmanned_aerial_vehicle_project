@@ -1,11 +1,5 @@
 #include "app_task.h"
 
-#define temp_speed 0
-// 电机实例
-static motor_t motor_left_top = {.tim = &htim3, .channel = TIM_CHANNEL_1, .speed = temp_speed};
-static motor_t motor_left_bottom = {.tim = &htim4, .channel = TIM_CHANNEL_4, .speed = temp_speed};
-static motor_t motor_right_top = {.tim = &htim2, .channel = TIM_CHANNEL_2, .speed = temp_speed};
-static motor_t motor_right_bottom = {.tim = &htim1, .channel = TIM_CHANNEL_3, .speed = temp_speed};
 
 // LED实例
 static led_t led_left_top = {.port = LED1_GPIO_Port, .pin = LED1_Pin};
@@ -18,7 +12,7 @@ remote_state_t remote_state = REMOTE_STATE_DISCONNECT;
 // 飞行状态实例
 flight_state_t flight_state = FLIGHT_STATE_IDLE;
 // 遥控数据实例
-remote_data_t remote_data;
+remote_data_t remote_data = {.throttle = 0, .yaw = 500, .pitch = 500, .roll = 500, .fix_height = 0, .shutdown = 0};
 // 欧拉角实例
 euler_angle_t euler_angle;
 
@@ -40,7 +34,7 @@ TaskHandle_t flight_task_handle;
 // 无线通讯任务
 void communicate_task(void *pvParameters);
 #define COMMUNICATE_TASK_STACK_SIZE 128
-#define COMMUNICATE_TASK_PRIORITY 2
+#define COMMUNICATE_TASK_PRIORITY 4 
 #define COMMUNICATE_TASK_PERIOD 6
 TaskHandle_t communicate_task_handle;
 
@@ -88,9 +82,33 @@ void flight_task(void *pvParameters)
 
     app_flight_init();
 
+    uint16_t distance = 0;
+    uint8_t count = 0;
+
     while (1)
     {
+        // 根据MPU6050数据，通过姿态解算得到欧拉角
         app_flight_get_euler_angle();
+
+        // 根据欧拉角和遥控数据，计算PID输出值
+        app_flight_pid_process();
+
+        if (flight_state == FLIGHT_STATE_FIX_HIGH)
+        {
+            // 24ms计算一次
+            count ++;
+            if (count >= 4)
+            {
+                count = 0;
+                app_fix_high_pid_process();
+            }
+        }
+
+        // 根据PID输出值，控制电机转速
+        app_flight_control_motor();
+
+        // distance = int_vl53l1_get_distance();
+        // DEBUG_PRINTF("distance:%d\n", distance);
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(FLIGHT_TASK_PERIOD));
     }
@@ -191,7 +209,7 @@ void led_task(void *pvParameters)
         }
         if (led_count == 10) // 重置周期为最小公倍数
         {
-            led_count == 0; 
+            led_count = 0; 
         }
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(LED_TASK_PERIOD)); // 执行周期为闪烁的最小公约数
     }

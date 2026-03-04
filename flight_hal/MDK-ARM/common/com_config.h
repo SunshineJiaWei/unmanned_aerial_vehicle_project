@@ -55,9 +55,9 @@ typedef struct
 
 typedef struct
 {
-    float roll;
-    float pitch;
-    float yaw;
+    float roll;  // 横滚角roll：向右是正
+    float pitch; // 俯仰角pitch：向前是正
+    float yaw;   // 偏航角yaw：向左（逆时针转）是正
 } euler_angle_t;
 
 typedef struct

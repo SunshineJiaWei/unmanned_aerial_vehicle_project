@@ -1,14 +1,16 @@
 #include "app_recv_data.h"
 
+
 extern remote_data_t remote_data;
 extern remote_state_t remote_state;
 extern flight_state_t flight_state;
 
+// 定高高度
+uint16_t target_height;
+
 static thr_state_t thr_state;
 static uint32_t enter_max_time;
 static uint32_t enter_min_time;
-
-
 
 static uint8_t recv_buf[TX_PLOAD_WIDTH];
 static uint8_t retry_count = 0;
@@ -29,7 +31,7 @@ uint8_t app_recv_data(void)
 
     if (recv_buf[0] != FRAME_HEAD_0 || recv_buf[1] != FRAME_HEAD_1 || recv_buf[2] != FRAME_HEAD_2)
     {
-        DEBUG_PRINTF("frame head error, %02x, %02x, %02x\n", recv_buf[0], recv_buf[1], recv_buf[2]);
+        // DEBUG_PRINTF("frame head error, %02x, %02x, %02x\n", recv_buf[0], recv_buf[1], recv_buf[2]);
         return 1;
     }
 
@@ -58,7 +60,7 @@ uint8_t app_recv_data(void)
 
     taskEXIT_CRITICAL();
 
-    DEBUG_PRINTF(":%d,%d,%d,%d,%d,%d\n", remote_data.throttle, remote_data.yaw, remote_data.pitch, remote_data.roll, remote_data.fix_height, remote_data.shutdown);
+    // DEBUG_PRINTF(":%d,%d,%d,%d,%d,%d\n", remote_data.throttle, remote_data.yaw, remote_data.pitch, remote_data.roll, remote_data.fix_height, remote_data.shutdown);
 
     // if (remote_data.fix_height)
     // {
@@ -177,6 +179,7 @@ void app_process_flight_state(void)
             if (remote_data.fix_height)
             {
                 flight_state = FLIGHT_STATE_FIX_HIGH;
+                target_height = int_vl53l1_get_distance();
             }
             if (remote_state == REMOTE_STATE_DISCONNECT)
             {
@@ -198,6 +201,7 @@ void app_process_flight_state(void)
         }
         case FLIGHT_STATE_FAULT:
         {
+            ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
             flight_state = FLIGHT_STATE_IDLE;
             break;
         }

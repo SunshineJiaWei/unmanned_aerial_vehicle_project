@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;./common;./freeRTOS;./freeRTOS/include;./freeRTOS/portable;./app;./interface</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;./common;./freeRTOS;./freeRTOS/include;./freeRTOS/portable;./app;./interface;.\interface\fix_high</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1027,6 +1027,21 @@
               <FileType>5</FileType>
               <FilePath>.\common\com_imu.h</FilePath>
             </File>
+            <File>
+              <FileName>com_pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\common\com_pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>com_pid.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\common\com_pid.h</FilePath>
+            </File>
+            <File>
+              <FileName>com_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\common\com_utils.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1276,6 +1291,56 @@
               <FileName>int_mpu6050.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\interface\int_mpu6050.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>interface/fix_high</GroupName>
+          <Files>
+            <File>
+              <FileName>vl53l1_platform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interface\fix_high\vl53l1_platform.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l1_platform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\interface\fix_high\vl53l1_platform.h</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l1_types.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\interface\fix_high\vl53l1_types.h</FilePath>
+            </File>
+            <File>
+              <FileName>VL53L1X_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interface\fix_high\VL53L1X_api.c</FilePath>
+            </File>
+            <File>
+              <FileName>VL53L1X_api.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\interface\fix_high\VL53L1X_api.h</FilePath>
+            </File>
+            <File>
+              <FileName>VL53L1X_calibration.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interface\fix_high\VL53L1X_calibration.c</FilePath>
+            </File>
+            <File>
+              <FileName>VL53L1X_calibration.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\interface\fix_high\VL53L1X_calibration.h</FilePath>
+            </File>
+            <File>
+              <FileName>int_vl53l1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interface\fix_high\int_vl53l1.c</FilePath>
+            </File>
+            <File>
+              <FileName>int_vl53l1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\interface\fix_high\int_vl53l1.h</FilePath>
             </File>
           </Files>
         </Group>
