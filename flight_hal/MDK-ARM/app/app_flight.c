@@ -11,14 +11,13 @@ static mpu6050_data_t mpu_data;
 static mpu6050_gyro_t last_gyro;
 // static float gyro_z_sum;
 
-// 记录上一次电机转速，用于斜率限制
-static uint16_t last_motor_speed[4] = {0, 0, 0, 0};
-
 // 电机实例
 static motor_t motor_left_top = {.tim = &htim3, .channel = TIM_CHANNEL_1, .speed = 0};
 static motor_t motor_left_bottom = {.tim = &htim4, .channel = TIM_CHANNEL_4, .speed = 0};
 static motor_t motor_right_top = {.tim = &htim2, .channel = TIM_CHANNEL_2, .speed = 0};
 static motor_t motor_right_bottom = {.tim = &htim1, .channel = TIM_CHANNEL_3, .speed = 0};
+
+static motor_speed_t last_motor_speed;
 
 // 俯仰角
 pid_t pitch_pid = {.kp = -7.00, .ki = 0.00, .kd = 0.00};
@@ -32,8 +31,8 @@ pid_t gyro_x_pid = {.kp = 3.00, .ki = 0.00, .kd = 0.50};
 pid_t yaw_pid = {.kp = -3.00, .ki = 0.00, .kd = 0.00};
 pid_t gyro_z_pid = {.kp = -5.00, .ki = 0.00, .kd = 0.00};
 
-// 定高pid - 降低微分系数以减少急剧响应
-pid_t altitude_pid = {.kp = -0.60, .ki = 0.00, .kd = -0.05};
+// 定高pid
+pid_t altitude_pid = {.kp = -0.60, .ki = 0.00, .kd = -0.20};
 
 static void app_motor_init(void)
 {
@@ -131,10 +130,6 @@ void app_fix_high_pid_process(void)
     altitude_pid.desire_val = target_height;
     altitude_pid.measure_val = int_vl53l1_get_distance();
     com_pid_calc(&altitude_pid);
-
-    // 限制高度PID输出幅度，防止电机过流
-    // 负值不超过-150，正值不超过100（减少抬升时的冲击）
-    altitude_pid.output = COM_LIMIT_RANGE(altitude_pid.output, -150, 100);
 }
 
 void app_flight_control_motor(void)
@@ -189,27 +184,21 @@ void app_flight_control_motor(void)
         }
     }
 
+    // 电机斜率输出限制，防止突变
+    const uint16_t max_change = 15; // 这个参数需要调到一个合理值，综合考虑响应速度和电机电流瞬间过大
+    // 但是限制了这里，原本那套pid参数就不适用了需要重新调整
+    motor_left_top.speed = com_limit_speed_change(motor_left_top.speed, &last_motor_speed.left_top, max_change);
+    motor_left_bottom.speed = com_limit_speed_change(motor_left_bottom.speed, &last_motor_speed.left_bottom, max_change);
+    motor_right_top.speed = com_limit_speed_change(motor_right_top.speed, &last_motor_speed.right_top, max_change);
+    motor_right_bottom.speed = com_limit_speed_change(motor_right_bottom.speed, &last_motor_speed.right_bottom, max_change);
+
     // 限制电机转速上限
     motor_left_top.speed = COM_LIMIT_THROTTLE(motor_left_top.speed);
     motor_left_bottom.speed = COM_LIMIT_THROTTLE(motor_left_bottom.speed);
     motor_right_top.speed = COM_LIMIT_THROTTLE(motor_right_top.speed);
     motor_right_bottom.speed = COM_LIMIT_THROTTLE(motor_right_bottom.speed);
 
-    // 防止过流的额外保护：限制电机总功率
-    // 如果所有电机都在高转速，按比例降低以避免过流
-    float motor_sum = motor_left_top.speed + motor_left_bottom.speed +
-                     motor_right_top.speed + motor_right_bottom.speed;
-    const float MAX_TOTAL_POWER = 2000.0f;  // 四个电机的总功率上限
-    if (motor_sum > MAX_TOTAL_POWER)
-    {
-        float scale = MAX_TOTAL_POWER / motor_sum;
-        motor_left_top.speed = (uint16_t)(motor_left_top.speed * scale);
-        motor_left_bottom.speed = (uint16_t)(motor_left_bottom.speed * scale);
-        motor_right_top.speed = (uint16_t)(motor_right_top.speed * scale);
-        motor_right_bottom.speed = (uint16_t)(motor_right_bottom.speed * scale);
-    }
-
-    // DEBUG_PRINTF(":%d,%d,%d,%d\n", motor_left_top.speed, motor_left_bottom.speed, motor_right_top.speed, motor_right_bottom.speed);
+    DEBUG_PRINTF(":%d,%d,%d,%d\n", motor_left_top.speed, motor_left_bottom.speed, motor_right_top.speed, motor_right_bottom.speed);
 
     if (remote_data.throttle <= 50)
     {
@@ -218,6 +207,11 @@ void app_flight_control_motor(void)
         motor_left_bottom.speed = 0;
         motor_right_top.speed = 0;
         motor_right_bottom.speed = 0;
+
+        last_motor_speed.left_top = 0;
+        last_motor_speed.left_bottom = 0;
+        last_motor_speed.right_top = 0;
+        last_motor_speed.right_bottom = 0;
     }
 
     int_motor_set_speed(&motor_left_top);

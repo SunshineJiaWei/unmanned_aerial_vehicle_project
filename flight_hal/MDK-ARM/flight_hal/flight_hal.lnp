@@ -29,6 +29,7 @@
 "flight_hal\com_filter.o"
 "flight_hal\com_imu.o"
 "flight_hal\com_pid.o"
+"flight_hal\com_utils.o"
 "flight_hal\croutine.o"
 "flight_hal\event_groups.o"
 "flight_hal\list.o"
