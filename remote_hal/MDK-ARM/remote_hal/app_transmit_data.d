@@ -51,3 +51,4 @@
 .\remote_hal\app_transmit_data.o: ./interface/int_joystick.h
 .\remote_hal\app_transmit_data.o: ../Core/Inc/adc.h
 .\remote_hal\app_transmit_data.o: ./common/com_utils.h
+.\remote_hal\app_transmit_data.o: ./common/com_protocol.h

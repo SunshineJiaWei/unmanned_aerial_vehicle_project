@@ -12,7 +12,7 @@ TaskHandle_t power_task_handle;
 void communicate_task(void *pvParameters);
 #define COMMUNICATE_TASK_STACK_SIZE 128
 #define COMMUNICATE_TASK_PRIORITY 3
-#define COMMUNICATE_TASK_PERIOD 6
+#define COMMUNICATE_TASK_PERIOD 10
 TaskHandle_t communicate_task_handle;
 
 // 按键任务
@@ -29,12 +29,20 @@ void joystick_task(void *pvParameters);
 #define JOYSTICK_TASK_PERIOD 20
 TaskHandle_t joystick_task_handle;
 
+// 摇杆任务
+void display_task(void *pvParameters);
+#define DISPLAY_TASK_STACK_SIZE 128
+#define DISPLAY_TASK_PRIORITY 1
+#define DISPLAY_TASK_PERIOD 100
+TaskHandle_t display_task_handle;
+
 void task_entry(void)
 {
     xTaskCreate(power_task, "power_task", POWER_TASK_STACK_SIZE, NULL, POWER_TASK_PRIORITY, &power_task_handle);
     xTaskCreate(communicate_task, "communicate_task", POWER_TASK_STACK_SIZE, NULL, COMMUNICATE_TASK_PRIORITY, &communicate_task_handle);
     xTaskCreate(key_task, "key_task", KEY_TASK_STACK_SIZE, NULL, KEY_TASK_PRIORITY, &communicate_task_handle);
     xTaskCreate(joystick_task, "joystick_task", JOYSTICK_TASK_STACK_SIZE, NULL, JOYSTICK_TASK_PRIORITY, &joystick_task_handle);
+    xTaskCreate(display_task, "display_task", DISPLAY_TASK_STACK_SIZE, NULL, DISPLAY_TASK_PRIORITY, &display_task_handle);
 
     vTaskStartScheduler();
 }
@@ -71,25 +79,14 @@ void communicate_task(void *pvParameters)
 {
     DEBUG_PRINTF("communicate_task\n");
 
-    TickType_t start_time = xTaskGetTickCount();
+    // TickType_t start_time = xTaskGetTickCount();
 
     while (1)
     {
         app_transmit_data();
 
-        // int_si24r1_tx_mode();
-        // si24r1_tx_buf[0] = 'h';
-        // si24r1_tx_buf[1] = 'e';
-        // si24r1_tx_buf[2] = 'l';
-        // si24r1_tx_buf[3] = 'l';
-        // si24r1_tx_buf[4] = 'o';
-
-
-        // int_si24r1_tx_packet(si24r1_tx_buf);
-
-        // int_si24r1_rx_mode();
-
-        vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
+        // vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
+        vTaskDelay(pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
     }
 }
 
@@ -121,5 +118,20 @@ void joystick_task(void *pvParameters)
         app_process_joystick_data();
 
         vTaskDelayUntil(&start_time, pdMS_TO_TICKS(JOYSTICK_TASK_PERIOD));
+    }
+}
+
+void display_task(void *pvParameters)
+{
+    DEBUG_PRINTF("display_task\n");
+
+    TickType_t start_time = xTaskGetTickCount();
+    app_display_init();
+
+    while (1)
+    {
+        app_display_show();
+
+        vTaskDelayUntil(&start_time, pdMS_TO_TICKS(DISPLAY_TASK_PERIOD));
     }
 }

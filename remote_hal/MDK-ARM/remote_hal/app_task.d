@@ -53,3 +53,7 @@
 .\remote_hal\app_task.o: app\app_transmit_data.h
 .\remote_hal\app_task.o: ./interface/int_si24r1.h
 .\remote_hal\app_task.o: ../Core/Inc/spi.h
+.\remote_hal\app_task.o: ./common/com_protocol.h
+.\remote_hal\app_task.o: app\app_display.h
+.\remote_hal\app_task.o: .\interface\oled\Inf_OLED.h
+.\remote_hal\app_task.o: ../Core/Inc/gpio.h

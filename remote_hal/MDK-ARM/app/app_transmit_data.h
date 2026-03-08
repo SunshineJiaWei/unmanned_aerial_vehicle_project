@@ -11,6 +11,7 @@
 #include "app_process_data.h"
 
 #include "com_debug.h"
+#include "com_protocol.h"
 
 #define FRAME_HEAD_0 0xAA
 #define FRAME_HEAD_1 0x55

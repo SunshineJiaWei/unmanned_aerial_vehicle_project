@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;./common;./freeRTOS;./freeRTOS/include;./freeRTOS/portable;./app;./interface</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;./common;./freeRTOS;./freeRTOS/include;./freeRTOS/portable;./app;./interface;.\interface\oled</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -951,6 +951,11 @@
               <FileType>5</FileType>
               <FilePath>.\common\com_utils.h</FilePath>
             </File>
+            <File>
+              <FileName>com_protocol.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\common\com_protocol.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1146,6 +1151,16 @@
               <FileType>5</FileType>
               <FilePath>.\app\app_transmit_data.h</FilePath>
             </File>
+            <File>
+              <FileName>app_display.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\app\app_display.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\app\app_display.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1190,6 +1205,31 @@
               <FileName>int_joystick.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\interface\int_joystick.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>interface/oled</GroupName>
+          <Files>
+            <File>
+              <FileName>Inf_font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interface\oled\Inf_font.c</FilePath>
+            </File>
+            <File>
+              <FileName>Inf_font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\interface\oled\Inf_font.h</FilePath>
+            </File>
+            <File>
+              <FileName>Inf_OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interface\oled\Inf_OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>Inf_OLED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\interface\oled\Inf_OLED.h</FilePath>
             </File>
           </Files>
         </Group>

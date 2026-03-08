@@ -17,6 +17,7 @@
 // 应用层
 #include "app_process_data.h"
 #include "app_transmit_data.h"
+#include "app_display.h"
 
 void task_entry(void);
 

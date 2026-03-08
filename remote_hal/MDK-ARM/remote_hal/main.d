@@ -55,3 +55,6 @@
 .\remote_hal\main.o: ./common/com_utils.h
 .\remote_hal\main.o: ./app/app_transmit_data.h
 .\remote_hal\main.o: ./interface/int_si24r1.h
+.\remote_hal\main.o: ./common/com_protocol.h
+.\remote_hal\main.o: ./app/app_display.h
+.\remote_hal\main.o: .\interface\oled\Inf_OLED.h
