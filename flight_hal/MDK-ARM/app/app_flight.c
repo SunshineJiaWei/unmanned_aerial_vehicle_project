@@ -185,12 +185,12 @@ void app_flight_control_motor(void)
     }
 
     // 电机斜率输出限制，防止突变
-    const uint16_t max_change = 15; // 这个参数需要调到一个合理值，综合考虑响应速度和电机电流瞬间过大
-    // 但是限制了这里，原本那套pid参数就不适用了需要重新调整
-    motor_left_top.speed = com_limit_speed_change(motor_left_top.speed, &last_motor_speed.left_top, max_change);
-    motor_left_bottom.speed = com_limit_speed_change(motor_left_bottom.speed, &last_motor_speed.left_bottom, max_change);
-    motor_right_top.speed = com_limit_speed_change(motor_right_top.speed, &last_motor_speed.right_top, max_change);
-    motor_right_bottom.speed = com_limit_speed_change(motor_right_bottom.speed, &last_motor_speed.right_bottom, max_change);
+    // const uint16_t max_change = 15; // 这个参数需要调到一个合理值，综合考虑响应速度和电机电流瞬间过大
+    // // 但是限制了这里，原本那套pid参数就不适用了需要重新调整
+    // motor_left_top.speed = com_limit_speed_change(motor_left_top.speed, &last_motor_speed.left_top, max_change);
+    // motor_left_bottom.speed = com_limit_speed_change(motor_left_bottom.speed, &last_motor_speed.left_bottom, max_change);
+    // motor_right_top.speed = com_limit_speed_change(motor_right_top.speed, &last_motor_speed.right_top, max_change);
+    // motor_right_bottom.speed = com_limit_speed_change(motor_right_bottom.speed, &last_motor_speed.right_bottom, max_change);
 
     // 限制电机转速上限
     motor_left_top.speed = COM_LIMIT_THROTTLE(motor_left_top.speed);
@@ -198,7 +198,7 @@ void app_flight_control_motor(void)
     motor_right_top.speed = COM_LIMIT_THROTTLE(motor_right_top.speed);
     motor_right_bottom.speed = COM_LIMIT_THROTTLE(motor_right_bottom.speed);
 
-    DEBUG_PRINTF(":%d,%d,%d,%d\n", motor_left_top.speed, motor_left_bottom.speed, motor_right_top.speed, motor_right_bottom.speed);
+    // DEBUG_PRINTF(":%d,%d,%d,%d\n", motor_left_top.speed, motor_left_bottom.speed, motor_right_top.speed, motor_right_bottom.speed);
 
     if (remote_data.throttle <= 50)
     {

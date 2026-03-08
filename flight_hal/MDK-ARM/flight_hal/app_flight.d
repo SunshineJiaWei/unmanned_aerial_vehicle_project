@@ -27,6 +27,8 @@ flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.
 flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
 flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
 flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
 flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 flight_hal\app_flight.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
@@ -52,11 +54,11 @@ flight_hal\app_flight.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 flight_hal\app_flight.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
 flight_hal\app_flight.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\string.h
 flight_hal\app_flight.o: ../Core/Inc/usart.h
-flight_hal\app_flight.o: .\interface\fix_high\int_vl53l1.h
-flight_hal\app_flight.o: .\interface\fix_high\vl53l1_platform.h
-flight_hal\app_flight.o: .\interface\fix_high\vl53l1_types.h
-flight_hal\app_flight.o: .\interface\fix_high\VL53L1X_api.h
-flight_hal\app_flight.o: .\interface\fix_high\VL53L1X_calibration.h
+flight_hal\app_flight.o: ./interface/fix_high/int_vl53l1.h
+flight_hal\app_flight.o: ./interface/fix_high/vl53l1_platform.h
+flight_hal\app_flight.o: ./interface/fix_high/vl53l1_types.h
+flight_hal\app_flight.o: ./interface/fix_high/VL53L1X_api.h
+flight_hal\app_flight.o: ./interface/fix_high/VL53L1X_calibration.h
 flight_hal\app_flight.o: ./common/com_filter.h
 flight_hal\app_flight.o: ./common/com_imu.h
 flight_hal\app_flight.o: ./common/com_pid.h

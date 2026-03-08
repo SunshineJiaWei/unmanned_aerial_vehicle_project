@@ -16,6 +16,8 @@ remote_data_t remote_data = {.throttle = 0, .yaw = 500, .pitch = 500, .roll = 50
 // 欧拉角实例
 euler_angle_t euler_angle;
 
+uint8_t back_vbat[RX_PLOAD_WIDTH];
+
 
 // 电源管理任务
 void power_task(void *pvParameters);
@@ -35,7 +37,7 @@ TaskHandle_t flight_task_handle;
 void communicate_task(void *pvParameters);
 #define COMMUNICATE_TASK_STACK_SIZE 128
 #define COMMUNICATE_TASK_PRIORITY 4 
-#define COMMUNICATE_TASK_PERIOD 6
+#define COMMUNICATE_TASK_PERIOD 10
 TaskHandle_t communicate_task_handle;
 
 // LED任务
@@ -118,7 +120,9 @@ void communicate_task(void *pvParameters)
 {
     DEBUG_PRINTF("communicate_task");
 
-    TickType_t start_time = xTaskGetTickCount();
+    // TickType_t start_time = xTaskGetTickCount();
+
+    int_bat_adc_init();
 
     while (1)
     {
@@ -132,7 +136,13 @@ void communicate_task(void *pvParameters)
 
         app_process_flight_state();
 
-        vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
+        float voltage = int_bat_adc_read();
+        sprintf((char *)back_vbat, "%.2f", voltage);
+        // DEBUG_PRINTF("voltage:%.2f\n", voltage);
+
+        // 这里不能使用vTaskDelayUntil，因为假设遥控器在1ms时发送，周期为10ms。飞行器在3ms时接收，此时通讯双方因时间误差太大，导致通信失败。如果采用vTaskDelayUntil，则会产生固定的2ms误差，一直无法通信成功。采用vtaskDelay的话，会在下一个延时中对齐，因为执行代码的时间几乎可以忽略(几百微秒)
+        // vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
+        vTaskDelay(pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));
     }
 }
 

@@ -4,6 +4,7 @@
 extern remote_data_t remote_data;
 extern remote_state_t remote_state;
 extern flight_state_t flight_state;
+extern uint8_t back_vbat[RX_PLOAD_WIDTH];
 
 // 定高高度
 uint16_t target_height;
@@ -22,11 +23,39 @@ static uint8_t retry_count = 0;
  */
 uint8_t app_recv_data(void)
 {
-
+    memset(recv_buf, 0, TX_PLOAD_WIDTH);
     uint8_t res = int_si24r1_rx_packet(recv_buf);
     if (res)
     {
         return 1;
+    }
+    if (res == 0)
+    {
+        /*
+            2.4G属于同步发送逻辑，通讯流程：
+            无人机开机接收数据 =》 遥控器发送数据 =》 无人机接收到遥控数据 =》 回传电量数据
+        */
+        uint16_t count = 500;
+        int_si24r1_tx_mode();
+        // 回传 电量数据：接收成功遥控数据 =》 一直发电量数据 =》 直到发送成功
+        while (int_si24r1_tx_packet(back_vbat) == 1 && count--)
+        {
+            /*
+                1. 发送端发送数据包
+                2. 接收端收到数据包 
+                3. 接收端自动回复 ACK（硬件自动完成，无需编程）
+                4. 发送端收到 ACK 
+                5. STATUS 寄存器的 TX_DS 位置 
+                6. 发送成功，return 0
+
+                1. 发送端未收到 ACK
+                2. 自动重发（重发次数在 SETUP_RETR 寄存器配置）
+                3. 达到最大重发次数仍未收到 ACK
+                4. STATUS 寄存器的 MAX_RT 位置 1
+                5. 发送失败，return 1
+            */
+        }
+        int_si24r1_rx_mode();
     }
 
     if (recv_buf[0] != FRAME_HEAD_0 || recv_buf[1] != FRAME_HEAD_1 || recv_buf[2] != FRAME_HEAD_2)
@@ -60,7 +89,7 @@ uint8_t app_recv_data(void)
 
     taskEXIT_CRITICAL();
 
-    // DEBUG_PRINTF(":%d,%d,%d,%d,%d,%d\n", remote_data.throttle, remote_data.yaw, remote_data.pitch, remote_data.roll, remote_data.fix_height, remote_data.shutdown);
+    DEBUG_PRINTF(":%d,%d,%d,%d,%d,%d\n", remote_data.throttle, remote_data.yaw, remote_data.pitch, remote_data.roll, remote_data.fix_height, remote_data.shutdown);
 
     // if (remote_data.fix_height)
     // {
@@ -106,6 +135,7 @@ static uint8_t app_throttle_unlock(void)
             {
                 thr_state = THE_STATE_MAX;
                 enter_max_time = xTaskGetTickCount();
+                DEBUG_PRINTF("1");
             }
             break;
         }
@@ -116,10 +146,12 @@ static uint8_t app_throttle_unlock(void)
                 if (xTaskGetTickCount() - enter_max_time >= 1000)
                 {
                     thr_state = THR_STATE_LEAVE_MAX;
+                    DEBUG_PRINTF("2");
                 }
                 else
                 {
                     thr_state = THR_STATE_FREE;
+                    DEBUG_PRINTF("3");
                 }
             }
             break;
@@ -130,6 +162,7 @@ static uint8_t app_throttle_unlock(void)
             {
                 thr_state = THR_STATE_MIN;
                 enter_min_time = xTaskGetTickCount();
+                DEBUG_PRINTF("4");
             }
             break;
         }
@@ -138,16 +171,19 @@ static uint8_t app_throttle_unlock(void)
             if (remote_data.throttle > 100 && xTaskGetTickCount() - enter_min_time < 1000)
             {
                 thr_state = THR_STATE_FREE;
+                DEBUG_PRINTF("5");
             }
             else if(remote_data.throttle <= 100 && xTaskGetTickCount() - enter_min_time >= 1000)
             {
                 thr_state = THR_STATE_UNLOCK;
+                DEBUG_PRINTF("6");
             }
             break;
         }
         case THR_STATE_UNLOCK:
         {
             thr_state = THR_STATE_FREE;
+            DEBUG_PRINTF("7");
             return 0;
             break;
         }

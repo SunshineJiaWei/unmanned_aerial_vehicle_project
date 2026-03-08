@@ -22,6 +22,8 @@ flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
@@ -30,6 +32,7 @@ flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 flight_hal\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+flight_hal\main.o: ../Core/Inc/adc.h
 flight_hal\main.o: ../Core/Inc/i2c.h
 flight_hal\main.o: ../Core/Inc/spi.h
 flight_hal\main.o: ../Core/Inc/tim.h
@@ -54,13 +57,14 @@ flight_hal\main.o: ./interface/int_ip5305t.h
 flight_hal\main.o: ./interface/int_motor.h
 flight_hal\main.o: ./interface/int_led.h
 flight_hal\main.o: ./interface/int_si24r1.h
+flight_hal\main.o: ./interface/int_bat_adc.h
 flight_hal\main.o: ./app/app_recv_data.h
-flight_hal\main.o: .\interface\fix_high\int_vl53l1.h
-flight_hal\main.o: .\interface\fix_high\vl53l1_platform.h
-flight_hal\main.o: .\interface\fix_high\vl53l1_types.h
+flight_hal\main.o: ./interface/fix_high/int_vl53l1.h
+flight_hal\main.o: ./interface/fix_high/vl53l1_platform.h
+flight_hal\main.o: ./interface/fix_high/vl53l1_types.h
 flight_hal\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-flight_hal\main.o: .\interface\fix_high\VL53L1X_api.h
-flight_hal\main.o: .\interface\fix_high\VL53L1X_calibration.h
+flight_hal\main.o: ./interface/fix_high/VL53L1X_api.h
+flight_hal\main.o: ./interface/fix_high/VL53L1X_calibration.h
 flight_hal\main.o: ./app/app_flight.h
 flight_hal\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\math.h
 flight_hal\main.o: ./interface/int_mpu6050.h

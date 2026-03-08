@@ -17,6 +17,7 @@
 #include "int_motor.h"
 #include "int_led.h"
 #include "int_si24r1.h"
+#include "int_bat_adc.h"
 
 // 应用层
 #include "app_recv_data.h"
