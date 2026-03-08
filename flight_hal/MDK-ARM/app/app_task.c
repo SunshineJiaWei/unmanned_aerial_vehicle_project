@@ -18,6 +18,8 @@ euler_angle_t euler_angle;
 
 uint8_t back_vbat[RX_PLOAD_WIDTH];
 
+// 2.4G通讯回传数据（电压+解锁值）
+back_data_t back_data;
 
 // 电源管理任务
 void power_task(void *pvParameters);
@@ -137,8 +139,13 @@ void communicate_task(void *pvParameters)
         app_process_flight_state();
 
         float voltage = int_bat_adc_read();
-        sprintf((char *)back_vbat, "%.2f", voltage);
-        // DEBUG_PRINTF("voltage:%.2f\n", voltage);
+        // sprintf((char *)back_vbat, "%.2f", voltage);
+        sprintf((char *)back_data.vbat, "%.2f", voltage);
+        DEBUG_PRINTF("voltage:%.2f\n", voltage);
+        if (flight_state != FLIGHT_STATE_IDLE && flight_state != FLIGHT_STATE_FAULT)
+        {
+            back_data.unlocked = 1;
+        }
 
         // 这里不能使用vTaskDelayUntil，因为假设遥控器在1ms时发送，周期为10ms。飞行器在3ms时接收，此时通讯双方因时间误差太大，导致通信失败。如果采用vTaskDelayUntil，则会产生固定的2ms误差，一直无法通信成功。采用vtaskDelay的话，会在下一个延时中对齐，因为执行代码的时间几乎可以忽略(几百微秒)
         // vTaskDelayUntil(&start_time, pdMS_TO_TICKS(COMMUNICATE_TASK_PERIOD));

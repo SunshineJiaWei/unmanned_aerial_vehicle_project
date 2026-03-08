@@ -44,7 +44,7 @@ I (./common/com_debug.h)(0x696BB878)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdarg.h)(0x60252376)
 I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
-I (./app/app_task.h)(0x69ABD56F)
+I (./app/app_task.h)(0x69AD36B4)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (./freeRTOS/FreeRTOSConfig.h)(0x696D046E)
 I (./freeRTOS/include/projdefs.h)(0x696C9A9A)
@@ -55,12 +55,13 @@ I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
 I (./common/com_config.h)(0x69854E3A)
+I (./common/com_protocol.h)(0x69AD3668)
 I (./interface/int_ip5305t.h)(0x697A042E)
 I (./interface/int_motor.h)(0x69A855F1)
 I (./interface/int_led.h)(0x69707359)
 I (./interface/int_si24r1.h)(0x69ABDF67)
-I (./interface/int_bat_adc.h)(0x69ABD44F)
-I (./app/app_recv_data.h)(0x69A814FA)
+I (./interface/int_bat_adc.h)(0x69AD36FD)
+I (./app/app_recv_data.h)(0x69AD3689)
 I (./interface/fix_high/int_vl53l1.h)(0x6997D2D0)
 I (./interface/fix_high/vl53l1_platform.h)(0x6997BC94)
 I (./interface/fix_high/vl53l1_types.h)(0x6965B7D5)
@@ -1088,6 +1089,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
+F (.\common\com_protocol.h)(0x69AD3668)()
 F (.\freeRTOS\croutine.c)(0x696C9A9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface -I ./interface/fix_high-I.\RTE\_flight_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o flight_hal\croutine.o --omf_browse flight_hal\croutine.crf --depend flight_hal\croutine.d)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -1234,8 +1236,8 @@ I (./freeRTOS/include/mpu_wrappers.h)(0x696C9A9A)
 I (./freeRTOS/include/task.h)(0x696C9A9A)
 I (./freeRTOS/include/list.h)(0x696C9A9A)
 F (.\freeRTOS\portable\portmacro.h)(0x696C9AA3)()
-F (.\app\app_task.c)(0x69ABF63D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface -I ./interface/fix_high-I.\RTE\_flight_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o flight_hal\app_task.o --omf_browse flight_hal\app_task.crf --depend flight_hal\app_task.d)
-I (app\app_task.h)(0x69ABD56F)
+F (.\app\app_task.c)(0x69AD37ED)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface -I ./interface/fix_high-I.\RTE\_flight_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o flight_hal\app_task.o --omf_browse flight_hal\app_task.crf --depend flight_hal\app_task.d)
+I (app\app_task.h)(0x69AD36B4)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
 I (D:\Software\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -1283,15 +1285,16 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
 I (./common/com_config.h)(0x69854E3A)
+I (./common/com_protocol.h)(0x69AD3668)
 I (./interface/int_ip5305t.h)(0x697A042E)
 I (./interface/int_motor.h)(0x69A855F1)
 I (../Core/Inc/tim.h)(0x696DDAA9)
 I (./interface/int_led.h)(0x69707359)
 I (./interface/int_si24r1.h)(0x69ABDF67)
 I (../Core/Inc/spi.h)(0x6971B9A0)
-I (./interface/int_bat_adc.h)(0x69ABD44F)
+I (./interface/int_bat_adc.h)(0x69AD36FD)
 I (../Core/Inc/adc.h)(0x69ABD34D)
-I (app\app_recv_data.h)(0x69A814FA)
+I (app\app_recv_data.h)(0x69AD3689)
 I (./interface/fix_high/int_vl53l1.h)(0x6997D2D0)
 I (./interface/fix_high/vl53l1_platform.h)(0x6997BC94)
 I (./interface/fix_high/vl53l1_types.h)(0x6965B7D5)
@@ -1306,9 +1309,9 @@ I (./common/com_filter.h)(0x697D78B6)
 I (./common/com_imu.h)(0x69807287)
 I (./common/com_pid.h)(0x6982FBDF)
 I (./common/com_utils.h)(0x69A85B37)
-F (.\app\app_task.h)(0x69ABD56F)()
-F (.\app\app_recv_data.c)(0x69AC2E21)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface -I ./interface/fix_high-I.\RTE\_flight_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o flight_hal\app_recv_data.o --omf_browse flight_hal\app_recv_data.crf --depend flight_hal\app_recv_data.d)
-I (app\app_recv_data.h)(0x69A814FA)
+F (.\app\app_task.h)(0x69AD36B4)()
+F (.\app\app_recv_data.c)(0x69AD372B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface -I ./interface/fix_high-I.\RTE\_flight_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o flight_hal\app_recv_data.o --omf_browse flight_hal\app_recv_data.crf --depend flight_hal\app_recv_data.d)
+I (app\app_recv_data.h)(0x69AD3689)
 I (D:\Software\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (./freeRTOS/include/FreeRTOS.h)(0x696C9A9A)
 I (D:\Software\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -1356,6 +1359,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
+I (./common/com_protocol.h)(0x69AD3668)
 I (./interface/int_si24r1.h)(0x69ABDF67)
 I (../Core/Inc/spi.h)(0x6971B9A0)
 I (./interface/fix_high/int_vl53l1.h)(0x6997D2D0)
@@ -1365,7 +1369,7 @@ I (D:\Software\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Core/Inc/i2c.h)(0x6997B83D)
 I (./interface/fix_high/VL53L1X_api.h)(0x6965B7CF)
 I (./interface/fix_high/VL53L1X_calibration.h)(0x6965B7D0)
-F (.\app\app_recv_data.h)(0x69A814FA)()
+F (.\app\app_recv_data.h)(0x69AD3689)()
 F (.\app\app_flight.c)(0x69AC2C58)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface -I ./interface/fix_high-I.\RTE\_flight_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o flight_hal\app_flight.o --omf_browse flight_hal\app_flight.crf --depend flight_hal\app_flight.d)
 I (app\app_flight.h)(0x69980014)
 I (D:\Software\Keil5\ARM\ARMCC\include\math.h)(0x60252378)
@@ -1649,7 +1653,7 @@ I (./freeRTOS/include/list.h)(0x696C9A9A)
 I (./common/com_config.h)(0x69854E3A)
 F (.\interface\int_mpu6050.h)(0x698066DF)()
 F (.\interface\int_bat_adc.c)(0x69ABD51B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface -I ./interface/fix_high-I.\RTE\_flight_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o flight_hal\int_bat_adc.o --omf_browse flight_hal\int_bat_adc.crf --depend flight_hal\int_bat_adc.d)
-I (interface\int_bat_adc.h)(0x69ABD44F)
+I (interface\int_bat_adc.h)(0x69AD36FD)
 I (../Core/Inc/main.h)(0x69ABD350)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6968A4B7)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69ABD350)
@@ -1683,7 +1687,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6968A4B7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6968A4B7)
 I (../Core/Inc/adc.h)(0x69ABD34D)
-F (.\interface\int_bat_adc.h)(0x69ABD44F)()
+F (.\interface\int_bat_adc.h)(0x69AD36FD)()
 F (.\interface\fix_high\vl53l1_platform.c)(0x6997C1A8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./common -I ./freeRTOS -I ./freeRTOS/include -I ./freeRTOS/portable -I ./app -I ./interface -I ./interface/fix_high-I.\RTE\_flight_hal-IC:\Users\25150\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\25150\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o flight_hal\vl53l1_platform.o --omf_browse flight_hal\vl53l1_platform.crf --depend flight_hal\vl53l1_platform.d)
 I (interface\fix_high\vl53l1_platform.h)(0x6997BC94)
 I (interface\fix_high\vl53l1_types.h)(0x6965B7D5)

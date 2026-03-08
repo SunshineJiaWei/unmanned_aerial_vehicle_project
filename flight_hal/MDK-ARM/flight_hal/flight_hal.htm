@@ -3,7 +3,7 @@
 <title>Static Call Graph - [flight_hal\flight_hal.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image flight_hal\flight_hal.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Mar 07 21:55:00 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Mar 08 16:48:54 2026
 <BR><P>
 <H3>Maximum Stack Usage =        344 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -784,10 +784,6 @@ Global Symbols
 
 <P><STRONG><a name="[ae]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_write_buf
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_read_buf
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_SI24R1_WRITE_REG
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_SI24R1_READ_REG
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_vl53l1_init
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_tx_packet
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_tx_mode
@@ -797,6 +793,10 @@ Global Symbols
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_ip5305t_start
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_ip5305t_shutdown
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_bat_adc_init
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_write_buf
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_read_buf
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_SI24R1_WRITE_REG
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_SI24R1_READ_REG
 </UL>
 
 <P><STRONG><a name="[62]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_hal.o(i.HAL_GetTick))
@@ -837,9 +837,9 @@ Global Symbols
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryRead
 </UL>
-<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_reg_read
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_RdWord
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_RdWord
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_RdByte
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_reg_read
 </UL>
 
 <P><STRONG><a name="[7a]"></a>HAL_I2C_Mem_Write</STRONG> (Thumb, 348 bytes, Stack size 48 bytes, stm32f1xx_hal_i2c.o(i.HAL_I2C_Mem_Write))
@@ -851,10 +851,10 @@ Global Symbols
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnBTFFlagUntilTimeout
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryWrite
 </UL>
-<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_reg_write
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_WrWord
+<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_WrWord
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_WrDWord
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_WrByte
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_reg_write
 </UL>
 
 <P><STRONG><a name="[74]"></a>HAL_I2C_MspInit</STRONG> (Thumb, 190 bytes, Stack size 32 bytes, i2c.o(i.HAL_I2C_MspInit))
@@ -872,9 +872,9 @@ Global Symbols
 <P><STRONG><a name="[7e]"></a>HAL_Init</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f1xx_hal.o(i.HAL_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1379,10 +1379,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = VL53L1X_SetInterMeasurementInMs &rArr; VL53L1_WrDWord &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_WrDWord
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L1_RdWord
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_vl53l1_init
 </UL>
@@ -1669,9 +1669,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
@@ -1720,8 +1720,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_flight_pid_process
 </UL>
 
-<P><STRONG><a name="[3d]"></a>communicate_task</STRONG> (Thumb, 192 bytes, Stack size 8 bytes, app_task.o(i.communicate_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = communicate_task &rArr; app_recv_data &rArr; int_si24r1_tx_packet &rArr; int_si24r1_write_buf &rArr; SPI_RW &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<P><STRONG><a name="[3d]"></a>communicate_task</STRONG> (Thumb, 332 bytes, Stack size 16 bytes, app_task.o(i.communicate_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = communicate_task &rArr; app_recv_data &rArr; int_si24r1_tx_packet &rArr; int_si24r1_write_buf &rArr; SPI_RW &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
@@ -1841,8 +1841,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_reg_read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mput6050_calc_offset
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_data
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_data
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mput6050_calc_offset
 </UL>
 
 <P><STRONG><a name="[ec]"></a>int_mpu6050_get_data</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, int_mpu6050.o(i.int_mpu6050_get_data))
@@ -1851,8 +1851,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_gyro
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_accel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mput6050_calc_offset
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_flight_get_euler_angle
+<BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_flight_get_euler_angle
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mput6050_calc_offset
 </UL>
 
 <P><STRONG><a name="[115]"></a>int_mpu6050_get_gyro</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, int_mpu6050.o(i.int_mpu6050_get_gyro))
@@ -1876,9 +1876,9 @@ Global Symbols
 <P><STRONG><a name="[117]"></a>int_mput6050_calc_offset</STRONG> (Thumb, 304 bytes, Stack size 64 bytes, int_mpu6050.o(i.int_mput6050_calc_offset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = int_mput6050_calc_offset &rArr; int_mpu6050_get_data &rArr; int_mpu6050_get_gyro &rArr; int_mpu6050_reg_read &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_accel
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_data
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_data
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_accel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_init
 </UL>
@@ -1906,12 +1906,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[11d]"></a>int_si24r1_init</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, int_si24r1.o(i.int_si24r1_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = int_si24r1_init &rArr; int_si24r1_check &rArr; int_si24r1_write_buf &rArr; SPI_RW &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = int_si24r1_init &rArr; int_si24r1_rx_mode &rArr; int_si24r1_write_buf &rArr; SPI_RW &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_check
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_rx_mode
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strrchr
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_check
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1923,8 +1923,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RW
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_check
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_rx_packet
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_rx_packet
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_check
 </UL>
 
 <P><STRONG><a name="[fb]"></a>int_si24r1_rx_mode</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, int_si24r1.o(i.int_si24r1_rx_mode))
@@ -1962,10 +1962,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = int_si24r1_tx_packet &rArr; int_si24r1_write_buf &rArr; SPI_RW &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_write_buf
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_SI24R1_WRITE_REG
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_SI24R1_READ_REG
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_recv_data
 </UL>
@@ -1976,10 +1976,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RW
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_check
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_tx_packet
+<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_tx_packet
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_tx_mode
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_rx_mode
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_check
 </UL>
 
 <P><STRONG><a name="[e4]"></a>int_vl53l1_get_distance</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, int_vl53l1.o(i.int_vl53l1_get_distance))
@@ -2156,12 +2156,12 @@ Global Symbols
 <LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 </UL>
-<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mput6050_calc_offset
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_vl53l1_init
+<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_vl53l1_init
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_si24r1_tx_packet
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_ip5305t_start
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_ip5305t_shutdown
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;communicate_task
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mput6050_calc_offset
 </UL>
 
 <P><STRONG><a name="[131]"></a>vTaskStartScheduler</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, tasks.o(i.vTaskStartScheduler))
@@ -2570,9 +2570,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_gyro
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_init
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_gyro
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_get_accel
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_mpu6050_init
 </UL>
 
 <P><STRONG><a name="[116]"></a>int_mpu6050_reg_write</STRONG> (Thumb, 36 bytes, Stack size 32 bytes, int_mpu6050.o(i.int_mpu6050_reg_write))

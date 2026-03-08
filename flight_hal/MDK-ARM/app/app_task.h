@@ -11,6 +11,7 @@
 // 通用层
 #include "com_debug.h"
 #include "com_config.h"
+#include "com_protocol.h"
 
 // 硬件接口层
 #include "int_ip5305t.h"

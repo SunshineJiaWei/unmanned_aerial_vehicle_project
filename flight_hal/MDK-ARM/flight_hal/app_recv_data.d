@@ -48,6 +48,7 @@ flight_hal\app_recv_data.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sp
 flight_hal\app_recv_data.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 flight_hal\app_recv_data.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 flight_hal\app_recv_data.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+flight_hal\app_recv_data.o: ./common/com_protocol.h
 flight_hal\app_recv_data.o: ./interface/int_si24r1.h
 flight_hal\app_recv_data.o: ../Core/Inc/spi.h
 flight_hal\app_recv_data.o: ./interface/fix_high/int_vl53l1.h

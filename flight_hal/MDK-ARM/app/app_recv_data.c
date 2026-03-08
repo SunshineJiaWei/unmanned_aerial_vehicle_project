@@ -4,7 +4,7 @@
 extern remote_data_t remote_data;
 extern remote_state_t remote_state;
 extern flight_state_t flight_state;
-extern uint8_t back_vbat[RX_PLOAD_WIDTH];
+extern back_data_t back_data;
 
 // 定高高度
 uint16_t target_height;
@@ -38,7 +38,7 @@ uint8_t app_recv_data(void)
         uint16_t count = 500;
         int_si24r1_tx_mode();
         // 回传 电量数据：接收成功遥控数据 =》 一直发电量数据 =》 直到发送成功
-        while (int_si24r1_tx_packet(back_vbat) == 1 && count--)
+        while (int_si24r1_tx_packet((uint8_t *)&back_data) == 1 && count--)
         {
             /*
                 1. 发送端发送数据包

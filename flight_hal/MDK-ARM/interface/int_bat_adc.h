@@ -13,3 +13,4 @@ float int_bat_adc_read(void);
 
 
 #endif /* __INT_BAT_ADC_H__ */
+

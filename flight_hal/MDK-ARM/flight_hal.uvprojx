@@ -1215,6 +1215,11 @@
               <FileType>1</FileType>
               <FilePath>.\common\com_utils.c</FilePath>
             </File>
+            <File>
+              <FileName>com_protocol.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\common\com_protocol.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -9,8 +9,12 @@
 
 #include "com_config.h"
 #include "com_debug.h"
+#include "com_protocol.h"
+
 #include "int_si24r1.h"
 #include "int_vl53l1.h"
+
+
 
 #define FRAME_HEAD_0 0xAA
 #define FRAME_HEAD_1 0x55
